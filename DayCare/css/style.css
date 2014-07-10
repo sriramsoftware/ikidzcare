@@ -1,0 +1,571 @@
+body
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+img
+{
+    border: 0 none;
+}
+.left
+{
+    float: left;
+}
+.right
+{
+    float: right;
+}
+.clear
+{
+    clear: both;
+}
+
+.innerMain
+{
+    margin: 0 auto;
+    padding: 10px 5px 0 5px;
+    width: 990px;
+}
+.header
+{
+    float: left;
+    width: 990px;
+}
+.logo
+{
+    float: left;
+    padding: 0 0 0 5px;
+}
+.logout
+{
+    background: url(../images/logout.png) no-repeat left top;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    float: left;
+    cursor: pointer;
+}
+.home
+{
+    /* background: url(../images/home.png) no-repeat left top; */
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    padding: 40px 10px 0 0;
+    border: 0px;
+    float: right;
+}
+.menu
+{
+    float: left;
+    width: 990px;
+    padding: 5px 0 0 0;
+}
+
+/************************** menu *******************************/
+#navigation
+{
+    margin: 0;
+    padding: 0;
+    clear: both;
+    width: 990px;
+    height: 36px;
+    background: #d6eaf8 url(../images/menubg.jpg) repeat-x left top;
+}
+
+
+ul.nav-main, ul.nav-main li
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+ul.nav-main
+{
+    position: relative;
+    z-index: 597;
+}
+
+ul.nav-main li:hover > ul
+{
+    visibility: visible;
+}
+
+
+ul.nav-main li.hover, ul.nav-main li:hover
+{
+    position: relative;
+    z-index: 599;
+    cursor: pointer;
+    background: url(../images/menuHover.jpg) repeat-x left top;
+}
+
+
+
+ul.nav-main li
+{
+    float: left;
+    display: block;
+    height: 36px;
+    color: #999;
+    font: 14px Arial, Helvetica, sans-serif;
+    background: url(../images/menuDivider.jpg) no-repeat right center;
+}
+
+ul.nav-main li a
+{
+    display: block; /* padding: 10px 44px 0 43px;*/
+    width: 165px;
+    padding: 9px 0 0 0;
+    height: 26px;
+    color: #fff;
+    text-align: center;
+    font: 14px Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+ul.nav-main li a:hover
+{
+    color: #D6D6D6;
+}
+
+
+
+ul.nav-main *.list
+{
+    /*padding-right: 22px;*/
+    background: url(../images/navigation-arrow.gif) no-repeat right top;
+}
+
+
+
+ul.nav-sub
+{
+    visibility: hidden;
+    position: absolute;
+    padding: 10px;
+    top: 36px;
+    left: 0;
+    z-index: 598;
+    background: #1192f3;
+    border-right: 1px solid #0367b5;
+    border-bottom: 1px solid #0367b5;
+    border-left: 1px solid #0367b5;
+}
+
+
+ul.nav-sub li
+{
+    list-style: none;
+    display: block;
+    padding: 0;
+    height: 27px;
+    float: none;
+    width: 143px;
+    text-align: left;
+    border-bottom: 1px solid #94d2ff;
+    background: none;
+}
+
+ul.nav-sub li a
+{
+    list-style: none;
+    display: block;
+    padding: 6px 5px 6px 5px;
+    height: 15px;
+    float: none;
+    width: 143px;
+    text-align: left;
+    background: #1192f3;
+    font: 12px Arial, Helvetica, sans-serif;
+}
+ul.nav-sub li a:hover
+{
+    background: #0264b1;
+    width: 133px;
+}
+
+/************************** menu *******************************/
+
+
+h3.title
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #fff;
+    padding: 4px 5px;
+    width: 980px;
+    margin: 0px;
+    background: #2387c2; /* url(../images/titleBg.jpg) repeat-x right top; */
+}
+h3.title a
+{
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+}
+h3.title a:hover
+{
+    font-weight: normal;
+    color: #000;
+    text-decoration: underline;
+}
+
+.content
+{
+    float: left;
+    width: 988px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  ----------------------------------- fieldset ------------------------ */
+/* label {
+	float: left;
+	margin: 0 .5em 0 0;
+	text-align: right;
+	}
+form div {
+	margin: .8em 0;
+	} 
+fieldset {
+	margin: 0 0 1em 0;
+	background: #f5f9fb;
+	width:970px;
+	padding:9px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#333;
+	}
+.detailsbox
+{
+    width: 980px;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+.fieldset {
+	float:left;
+	width:970px;
+	padding:10px;
+	margin:0px;
+	border:1px solid #6d6d6d;
+	background:#f5f9fb;
+} 
+*/
+/******************************** 01 09 11 pankaj ************************************/
+label
+{
+    float: left;
+    margin: 0 .5em 0 0;
+    text-align: right;
+}
+form
+{
+    padding: 0px;
+    margin: 0px;
+}
+form
+{
+    margin: 0px;
+    padding: 0px;
+}
+fieldset
+{
+    margin: .2em 0 1em 0;
+    padding: 5px;
+    width: 977px;
+    float: left;
+    border: 1px solid #cacaca;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333333;
+}
+.fieldDiv
+{
+    float: left;
+    width: 965px;
+    padding: 5px;
+    border: 1px solid #e3f4fc;
+    background: #f5f9fb;
+}
+/*  ----------------------------------- fieldset end ------------------------ */
+.inbox
+{
+    float: left;
+    width: 231px;
+}
+.name
+{
+    float: left;
+    width: 231px;
+    padding: 0 0 5px 0;
+}
+.box
+{
+    float: left;
+    width: 230px;
+    padding: 0 0 10px 0;
+    text-align: left;
+}
+.box2
+{
+    float: left;
+    width: 110px;
+    padding: 5px 0 5px 0;
+    text-align: right;
+}
+
+.box3
+{
+    float: left;
+    width: 223px;
+    padding: 0 0 10px 0;
+    text-align: left;
+}
+.fildbox
+{
+    float: left;
+    width: 216px;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    margin-top: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+.brdbox
+{
+    border: 1px solid #999;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+.fildboxstaff
+{
+    float: left;
+    width: 223px;
+    padding: 2px 3px;
+    border: 1px solid #999;
+    margin-top: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+.pndR15
+{
+    padding-right: 15px;
+}
+
+.velodation
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.btn
+{
+    background: #1457b3;
+    width: 110px;
+    height: 30px;
+    padding: 5px 0px 5px 0px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    font-weight: bold;
+    float: left;
+    border: 1px solid #003c8d;
+    text-align: center;
+}
+.btn:hover
+{
+    background: #12227c;
+    height: 30px;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid #000d53;
+}
+.photo
+{
+    width: 99px;
+    height: 124px;
+    border: 1px solid #666;
+    float: left;
+}
+
+/* ---------------------------------- login page css -------------------------------*/
+
+.loginbody
+{
+    background: #a8958e url(../images/bodybg.jpg) repeat-x left top;
+}
+.deshBg
+{
+    background: #a8958e url(../images/bodybg.jpg) repeat-x left top;
+}
+#main
+{
+    margin: 0 auto;
+    width: 577px;
+    height: 571px;
+    padding: 8px 0 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #fff;
+}
+#main a
+{
+    color: #fff;
+    text-decoration: underline;
+}
+#main a:hover
+{
+    color: #fff;
+    text-decoration: none;
+}
+.main
+{
+    background: url(../images/bodyimg.jpg) no-repeat top left;
+    width: 258px;
+    height: 135px;
+    float: left;
+    padding: 58px 62px 382px 257px;
+}
+.textfilds
+{
+    width: 236px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #545454;
+    background: none;
+    border: none;
+    padding: 4px 10px;
+    background: #FFF;
+    border: 1px solid #666;
+}
+.loginbtn
+{
+    background: url(../images/loginBtn.png) no-repeat top left;
+    color: #fff;
+    border: none;
+    width: 63px;
+    height: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* -------------------------------------- login page css End --------------------------- */
+
+.user
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #333;
+}
+.user a
+{
+    color: #00156E;
+    text-decoration: none;
+}
+.user a:hover
+{
+    color: #000;
+    text-decoration: underline;
+}
+
+/**********************************  01 09 11 pankaj ***************************************/
+.pndbNone
+{
+    padding-bottom: 0px;
+}
+.red
+{
+    color: Red;
+}
+
+.pndR25
+{
+    padding-right: 25px;
+}
+
+/**********************************  13-oct-11 pankaj ***************************************/
+
+.LateFee
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333333;
+}
+
+.btn
+{
+    background: #1457b3;
+    width: 110px;
+    height: 30px;
+    padding: 5px 0px 5px 0px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    font-weight: bold;
+    float: left;
+    border: 1px solid #003c8d;
+    text-align: center;
+}
+
+.btnLateFee
+{
+    background: #1457b3;
+    width: 110px;
+    height: 30px;
+    padding: 5px 0px 5px 0px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FFF;
+    font-weight: bold;
+    border: 1px solid #003c8d;
+    text-align: center;
+}
+
+.btnLateFee:hover
+{
+    background: #12227c;
+    height: 30px;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid #000d53;
+}
+.addView
+{
+    float: left;
+    background: #abd4e8;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #74b2d0;
+    color: #1457b3;
+    text-decoration:none;
+    margin: 5px 0 0 0;
+    cursor:pointer;
+}
+.viewReport {
+background: url(../images/viewReport.png) no-repeat center center;
+	width:117px;
+	height:38px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color:#717171;
+	border:none;
+}
+.viewReport:hover
+{background: url(../images/viewReportH.png) no-repeat center center;}

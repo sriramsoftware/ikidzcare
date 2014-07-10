@@ -1,0 +1,10 @@
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\bin\Debug\DayCareBAL.dll.config
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\bin\Debug\DayCareBAL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\bin\Debug\DayCareBAL.pdb
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\bin\Debug\DayCareDAL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\bin\Debug\DayCarePL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\bin\Debug\DayCareDAL.pdb
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\bin\Debug\DayCarePL.pdb
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\obj\Debug\ResolveAssemblyReference.cache
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\obj\Debug\DayCareBAL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareBAL\obj\Debug\DayCareBAL.pdb

@@ -1,0 +1,590 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using Telerik.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace DayCare.UI
+{
+    public partial class SchoolProgramFeesDetail : System.Web.UI.Page
+    {
+        RadAjaxManager MasterAjaxManager;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["SchoolId"] == null || Session["CurrentSchoolYearId"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+
+        }
+
+        public void rgSchoolProgramFeesDetail_NeedDataSource(object source, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
+        {
+            try
+            {
+                if (!e.IsFromDetailTable)
+                {
+                    Guid SchoolId = new Guid();
+                    if (Session["SchoolId"] != null)
+                    {
+                        SchoolId = new Guid(Session["SchoolId"].ToString());
+                    }
+                    DayCareBAL.SchoolProgramFeesDetailService ProxySchoolProgram = new DayCareBAL.SchoolProgramFeesDetailService();
+                    DayCarePL.SchoolProgramFeesDetailProperties objSchoolProgramFeesDetail = new DayCarePL.SchoolProgramFeesDetailProperties();
+                    List<DayCarePL.SchoolProgramProperties> lstSchoolProgram = ProxySchoolProgram.LoadSchoolProgram(SchoolId, new Guid(Session["CurrentSchoolYearId"].ToString()));
+                    // rgSchoolProgramFeesDetail.DataSource = ProxySchoolProgram.LoadSchoolProgram(SchoolId, new Guid(Session["CurrentSchoolYearId"].ToString()));
+                    if (lstSchoolProgram != null)
+                    {
+                        rgSchoolProgramFeesDetail.DataSource = ProxySchoolProgram.LoadSchoolProgram(SchoolId, new Guid(Session["CurrentSchoolYearId"].ToString()));
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+
+        }
+
+        protected void rgSchoolProgramFeesDetail_ItemCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            Guid SchoolId = new Guid();
+            Guid CurrentSchoolYearId = new Guid();
+            if (Session["SchoolId"] != null)
+            {
+                SchoolId = new Guid(Session["SchoolId"].ToString());
+            }
+
+            if (Session["CurrentSchoolYearId"] != null)
+            {
+                CurrentSchoolYearId = new Guid(Session["CurrentSchoolYearId"].ToString());
+            }
+
+            if (!Common.IsCurrentYear(CurrentSchoolYearId, SchoolId))
+            {
+                if (e.CommandName == "InitInsert")
+                {
+
+                    e.Canceled = true;
+                }
+                else if (e.CommandName == "Edit")
+                {
+                    e.Canceled = true;
+
+                }
+            }
+            else
+            {
+                if (e.CommandName == "Edit")
+                {
+
+
+                }
+                if (e.CommandName == "InitInsert")
+                {
+                    ViewState["IsPreRenderCall"] = false;
+                }
+                if (e.CommandName == "Cancel")
+                {
+                    ViewState["IsPreRenderCall"] = null;
+                }
+            }
+        }
+
+        protected void rgSchoolProgramFeesDetail_EditCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+        }
+
+        protected void rgSchoolProgramFeesDetail_ItemCreated(object sender, Telerik.Web.UI.GridItemEventArgs e)
+        {
+            if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+            {
+                GridEditableItem item = e.Item as GridEditableItem;
+                TableCell cell;
+                RequiredFieldValidator validator;
+                if (e.Item.OwnerTableView.Name == "SchoolProgram")
+                {
+                    if (item != null)
+                    {
+                        ValidationSummary validationsum = new ValidationSummary();
+                        validationsum.ID = "validationsum1";
+                        validationsum.ShowMessageBox = true;
+                        validationsum.ShowSummary = false;
+
+                        TextBox txtSchoolProgram = item["Program"].FindControl("txtSchoolProgram") as TextBox;
+                        if (txtSchoolProgram != null)
+                        {
+                            cell = (TableCell)txtSchoolProgram.Parent;
+                            validator = new RequiredFieldValidator();
+                            if (cell != null)
+                            {
+                                txtSchoolProgram.ID = "txtSchoolProgram";
+                                validator.ControlToValidate = txtSchoolProgram.ID;
+                                validator.ErrorMessage = "Please enter Program.";
+                                validator.SetFocusOnError = true;
+                                validator.Display = ValidatorDisplay.None;
+                                cell.Controls.Add(validator);
+                                cell.Controls.Add(validationsum);
+                            }
+                        }
+                    }
+                }
+                if (e.Item.OwnerTableView.DataMember == "Fees")
+                {
+                    GridEditableItem item1 = e.Item as GridEditableItem;
+                    GridEditableItem item2 = e.Item as GridEditableItem;
+                    if (item1 != null)
+                    {
+                        ValidationSummary validationsum = new ValidationSummary();
+                        validationsum.ID = "validationsum1";
+                        validationsum.ShowMessageBox = true;
+                        validationsum.ShowSummary = false;
+
+                        TextBox txtFees = item1["Fees"].FindControl("txtFees") as TextBox;
+                        if (txtFees != null)
+                        {
+                            cell = (TableCell)txtFees.Parent;
+                            validator = new RequiredFieldValidator();
+                            if (cell != null)
+                            {
+                                txtFees.ID = "txtFees";
+                                validator.ControlToValidate = txtFees.ID;
+                                validator.ErrorMessage = "Please enter Fees.";
+                                validator.SetFocusOnError = true;
+                                validator.Display = ValidatorDisplay.None;
+                                cell.Controls.Add(validator);
+                                cell.Controls.Add(validationsum);
+                            }
+                        }
+                        DropDownList ddlFeesPeriod = item1["FeesPeriod"].FindControl("ddlFeesPeriod") as DropDownList;
+                        if (ddlFeesPeriod != null)
+                        {
+                            cell = (TableCell)ddlFeesPeriod.Parent;
+                            validator = new RequiredFieldValidator();
+                            if (cell != null)
+                            {
+                                ddlFeesPeriod.ID = "ddlPaymentMethod";
+                                validator.ControlToValidate = ddlFeesPeriod.ID;
+                                validator.ErrorMessage = "Please select Fees Period.";
+                                validator.InitialValue = DayCarePL.Common.GUID_DEFAULT;
+
+                                validator.SetFocusOnError = true;
+                                validator.Display = ValidatorDisplay.None;
+                                cell.Controls.Add(validator);
+                                cell.Controls.Add(validationsum);
+                            }
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+        protected void rgSchoolProgramFeesDetail_PreRender(object sender, EventArgs e)
+        {
+            if (ViewState["IsPreRenderCall"] == null)
+            {
+                if (rgSchoolProgramFeesDetail.MasterTableView.Items.Count > 0)
+                {
+                    for (int cnt = 0; cnt < rgSchoolProgramFeesDetail.MasterTableView.Items.Count; cnt++)
+                    {
+                        rgSchoolProgramFeesDetail.MasterTableView.Items[cnt].Expanded = true;
+                        if (rgSchoolProgramFeesDetail.MasterTableView.Items[cnt].ChildItem.NestedTableViews[0].Items.Count > 0)
+                        {
+                            rgSchoolProgramFeesDetail.MasterTableView.Items[cnt].ChildItem.NestedTableViews[0].Items[0].Expanded = true;
+                        }
+                        else
+                        {
+                            //rgFamilyPayment.MasterTableView.Items[0].ChildItem.NestedTableViews[0].Items[0].Expanded = false;
+                            rgSchoolProgramFeesDetail.MasterTableView.Items[cnt].Expanded = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        protected void rgSchoolProgramFeesDetail_ItemDataBound(object sender, Telerik.Web.UI.GridItemEventArgs e)
+        {
+            if (e.Item.ItemType == GridItemType.Item || e.Item.ItemType == GridItemType.AlternatingItem)
+            {
+                if (e.Item.OwnerTableView.DataMember == "Fees")
+                {
+                    GridDataItem item = e.Item as GridDataItem;
+                    DayCarePL.SchoolProgramFeesDetailProperties objSchoolProgramData = e.Item.DataItem as DayCarePL.SchoolProgramFeesDetailProperties;
+                    Label lblWeekDay = item["WeekDay"].FindControl("lblWeekDay") as Label;
+                    if (objSchoolProgramData.EffectiveWeekDay == 1)
+                    {
+                        lblWeekDay.Text = "Monday";
+                    }
+                    if (objSchoolProgramData.EffectiveWeekDay == 2)
+                    {
+                        lblWeekDay.Text = "Tuesday";
+                    }
+                    if (objSchoolProgramData.EffectiveWeekDay == 3)
+                    {
+                        lblWeekDay.Text = "Wednesday";
+                    }
+                    if (objSchoolProgramData.EffectiveWeekDay == 4)
+                    {
+                        lblWeekDay.Text = "Thursday";
+                    }
+                    if (objSchoolProgramData.EffectiveWeekDay == 5)
+                    {
+                        lblWeekDay.Text = "Friday";
+                    }
+                    Label lblMonthday = item["Day"].FindControl("lblMonthday") as Label;
+                    lblMonthday.Text = objSchoolProgramData.EffectiveMonthDay == 0 ? "" : objSchoolProgramData.EffectiveMonthDay.ToString();
+                    Label lblYearDate = item["YearDate"].FindControl("lblYearDate") as Label;
+                    lblYearDate.Text = objSchoolProgramData.EffectiveYearDate == null ? "" : string.Format("{0:dd-MMM-yyyy}", objSchoolProgramData.EffectiveYearDate);
+                }
+            }
+
+            if (e.Item.ItemType == GridItemType.EditItem)
+            {
+
+                if (e.Item.OwnerTableView.DataMember == "Fees")
+                {
+                    GridEditableItem itm = e.Item as GridEditableItem;
+                    DayCarePL.SchoolProgramFeesDetailProperties objSchoolProgramData = e.Item.DataItem as DayCarePL.SchoolProgramFeesDetailProperties;
+                    DropDownList ddlFeesPeriod = itm["FeesPeriod"].Controls[1] as DropDownList;
+
+                    if (ddlFeesPeriod != null)
+                    {
+                        Common.BindFeesPeriod(ddlFeesPeriod);
+                    }
+                    if (objSchoolProgramData != null)
+                    {
+                        if (ddlFeesPeriod != null && ddlFeesPeriod.Items.Count > 0)
+                        {
+                            ddlFeesPeriod.SelectedValue = Convert.ToString(objSchoolProgramData.FeesPeriodId);
+                        }
+                    }
+
+                    if (objSchoolProgramData.EffectiveMonthDay > 0)
+                    {
+                        DropDownList ddlMonthDay = itm["Day"].Controls[1] as DropDownList;
+                        ddlMonthDay.SelectedValue = objSchoolProgramData.EffectiveMonthDay.ToString();
+                    }
+                    if (objSchoolProgramData.EffectiveWeekDay > 0)
+                    {
+                        DropDownList ddlWeekDay = itm["WeekDay"].Controls[1] as DropDownList;
+                        ddlWeekDay.SelectedValue = objSchoolProgramData.EffectiveWeekDay.ToString();
+                    }
+                    if (objSchoolProgramData.EffectiveYearDate != null)
+                    {
+                        RadDatePicker rdpYearDate = itm["YearDate"].FindControl("YearDate") as RadDatePicker;
+                        rdpYearDate.SelectedDate = objSchoolProgramData.EffectiveYearDate;
+                    }
+                }
+            }
+            if (e.Item.OwnerTableView.Name == "SchoolProgram")
+            {
+                if (e.Item.ItemIndex == -1)
+                {
+                    if (e.Item.Edit == true)
+                    {
+                        GridEditableItem dataItem = e.Item as Telerik.Web.UI.GridEditableItem;
+                        CheckBox chkActive = dataItem["Active"].Controls[0] as CheckBox;
+                        chkActive.Checked = true;
+                    }
+                }
+            }
+        }
+
+        protected void rgSchoolProgramFeesDetail_DetailTableDataBind(object sender, Telerik.Web.UI.GridDetailTableDataBindEventArgs e)
+        {
+
+            try
+            {
+                GridDataItem dataItem = (GridDataItem)e.DetailTableView.ParentItem;
+                switch (e.DetailTableView.DataMember)
+                {
+                    case "Fees":
+                        {
+                            DayCareBAL.SchoolProgramFeesDetailService proxySchoolProgramFeesDetail = new DayCareBAL.SchoolProgramFeesDetailService();
+                            List<DayCarePL.SchoolProgramFeesDetailProperties> lstSchoolProgramFeesDetail = proxySchoolProgramFeesDetail.LoadSchoolProgramFeesDetail(new Guid(dataItem.GetDataKeyValue("Id").ToString()));
+                            if (lstSchoolProgramFeesDetail != null)
+                            {
+                                if (lstSchoolProgramFeesDetail != null)
+                                {
+                                    if (lstSchoolProgramFeesDetail.Count > 0)
+                                    {
+                                        e.DetailTableView.DataSource = lstSchoolProgramFeesDetail;
+                                    }
+                                    else
+                                    {
+                                        e.DetailTableView.DataSource = new List<DayCarePL.SchoolProgramFeesDetailProperties>();
+                                    }
+                                }
+
+                            }
+                            break;
+                        }
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        protected void rgSchoolProgramFeesDetail_UpdateCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            bool isValid = SubmitRecord(sender, e);
+            if (isValid == false)
+            {
+                e.Canceled = true;
+            }
+        }
+
+        protected void rgSchoolProgramFeesDetail_InsertCommand(object sender, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            bool isValid = SubmitRecord(sender, e);
+            if (isValid == false)
+            {
+                e.Canceled = true;
+            }
+            rgSchoolProgramFeesDetail.MasterTableView.CurrentPageIndex = 0;
+        }
+
+        protected void rgSchoolProgramFeesDetail_DeleteCommand(object source, GridCommandEventArgs e)
+        {
+            try
+            {
+                Guid Id = new Guid(e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Id"].ToString());
+                DayCareBAL.SchoolProgramFeesDetailService proxyDelete = new DayCareBAL.SchoolProgramFeesDetailService();
+                if (proxyDelete.Delete(Id))
+                {
+                    rgSchoolProgramFeesDetail.MasterTableView.DetailTables[0].Rebind();
+                    MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                    MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Delete Successfully", "false"));
+                    return;
+                }
+                else
+                {
+                    MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                    MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Internal Error,Please try again", "false"));
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        public bool SubmitRecord(object sender, GridCommandEventArgs e)
+        {
+            DayCarePL.Logger.Write(DayCarePL.LogType.INFO, DayCarePL.ModuleToLog.SchoolProgram, "SubmitRecord", "Submit record method called", DayCarePL.Common.GUID_DEFAULT);
+            bool result = false;
+            string Amount = "";
+            DayCarePL.Logger.Write(DayCarePL.LogType.DEBUG, DayCarePL.ModuleToLog.SchoolProgram, "SubmitRecord", "Debug Submit Record Of SchoolProgramFeesDetail", DayCarePL.Common.GUID_DEFAULT);
+            DayCareBAL.SchoolProgramFeesDetailService proxySchoolProgramFeesDetail = new DayCareBAL.SchoolProgramFeesDetailService();
+            DayCareBAL.SchoolProgramService proxySchoolProgram = new DayCareBAL.SchoolProgramService();
+            DayCarePL.SchoolProgramProperties objSchoolProgram = new DayCarePL.SchoolProgramProperties();
+            DayCarePL.SchoolProgramFeesDetailProperties objSchoolProgramFeesDetail = new DayCarePL.SchoolProgramFeesDetailProperties();
+
+
+            if (e.Item.OwnerTableView.Name == "SchoolProgram")
+            {
+                GridDataItem item = (GridDataItem)e.Item;
+                var InsertItem = e.Item as Telerik.Web.UI.GridEditableItem;
+
+                Telerik.Web.UI.GridEditManager editMan = InsertItem.EditManager;
+
+                if (InsertItem != null)
+                {
+                    foreach (GridColumn column in e.Item.OwnerTableView.RenderColumns)
+                    {
+                        if (column is GridEditableColumn)
+                        {
+                            IGridEditableColumn editTableColumn = (column as IGridEditableColumn);
+
+                            if (editTableColumn.IsEditable)
+                            {
+                                IGridColumnEditor editor = editMan.GetColumnEditor(editTableColumn);
+
+                                switch (column.UniqueName)
+                                {
+                                    case "Program":
+                                        {
+                                            objSchoolProgram.Title = (e.Item.FindControl("txtSchoolProgram") as TextBox).Text.Trim();
+                                            break;
+                                        }
+                                    case "Active":
+                                        {
+                                            objSchoolProgram.Active = (editor as GridCheckBoxColumnEditor).Value;
+                                            break;
+                                        }
+                                    case "IsPrimary":
+                                        {
+                                            objSchoolProgram.IsPrimary = (editor as GridCheckBoxColumnEditor).Value;
+                                            break;
+                                        }
+                                    case "Comments":
+                                        {
+
+                                            objSchoolProgram.Comments = (e.Item.FindControl("txtComments") as TextBox).Text.Trim();
+                                            break;
+                                        }
+                                }
+                            }
+                        }
+                    }
+                    if (Session["CurrentSchoolYearId"] != null)
+                    {
+                        objSchoolProgram.SchoolYearId = new Guid(Session["CurrentSchoolYearId"].ToString());
+                    }
+                    if (e.CommandName != "PerformInsert")
+                    {
+                        if (Session["StaffId"] != null)
+                        {
+                            objSchoolProgramFeesDetail.LastmodifiedById = new Guid(Session["StaffId"].ToString());
+                            objSchoolProgram.LastModifiedById = new Guid(Session["StaffId"].ToString());
+                        }
+                        objSchoolProgramFeesDetail.Id = new Guid(e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Id"].ToString());
+                    }
+                    else
+                    {
+                        if (Session["StaffId"] != null)
+                        {
+                            objSchoolProgramFeesDetail.CreatedById = new Guid(Session["StaffId"].ToString());
+                            objSchoolProgramFeesDetail.LastmodifiedById = new Guid(Session["StaffId"].ToString());
+                            objSchoolProgram.CreatedById = new Guid(Session["StaffId"].ToString());
+                            objSchoolProgram.LastModifiedById = new Guid(Session["StaffId"].ToString());
+                        }
+                    }
+                    hdnName.Value = "";
+                    if (proxySchoolProgram.Save(objSchoolProgram))
+                    {
+                        result = true;
+                    }
+                }
+            }
+
+            if (e.Item.OwnerTableView.Name == "rgFees")
+            {
+
+                GridDataItem item = (GridDataItem)e.Item;
+                var InsertItem = e.Item as Telerik.Web.UI.GridEditableItem;
+
+                Telerik.Web.UI.GridEditManager editMan = InsertItem.EditManager;
+
+                if (InsertItem != null)
+                {
+                    foreach (GridColumn column in e.Item.OwnerTableView.RenderColumns)
+                    {
+                        if (column is GridEditableColumn)
+                        {
+                            IGridEditableColumn editTableColumn = (column as IGridEditableColumn);
+
+                            if (editTableColumn.IsEditable)
+                            {
+                                IGridColumnEditor editor = editMan.GetColumnEditor(editTableColumn);
+
+                                switch (column.UniqueName)
+                                {
+                                    case "Fees":
+                                        {
+                                            objSchoolProgramFeesDetail.Fees = Convert.ToDecimal((e.Item.FindControl("txtFees") as TextBox).Text.Trim());
+                                            break;
+                                        }
+                                    case "FeesPeriod":
+                                        {
+                                            GridEditableItem itm = e.Item as GridEditableItem;
+                                            DropDownList ddlFeesPeriod = itm["FeesPeriod"].Controls[1] as DropDownList;
+                                            objSchoolProgramFeesDetail.FeesPeriodId = new Guid(ddlFeesPeriod.SelectedValue.ToString());
+                                            break;
+                                        }
+                                    case "WeekDay":
+                                        {
+                                            int wd = Convert.ToInt32((e.Item.FindControl("ddlWeekDay") as DropDownList).SelectedValue);
+                                            if (wd > 0)
+                                                objSchoolProgramFeesDetail.EffectiveWeekDay = wd;
+                                            break;
+                                        }
+                                    case "Day":
+                                        {
+                                            int md= Convert.ToInt32((e.Item.FindControl("ddlMonthDay") as DropDownList).SelectedValue);
+                                            if (md > 0)
+                                                objSchoolProgramFeesDetail.EffectiveMonthDay = md;
+                                            break;
+                                        }
+                                    case "YearDate":
+                                        {
+                                            if((e.Item.FindControl("rdpYearDate") as RadDatePicker).SelectedDate!=null)
+                                            objSchoolProgramFeesDetail.EffectiveYearDate = (e.Item.FindControl("rdpYearDate") as RadDatePicker).SelectedDate;
+                                            break;
+                                        }
+                                }
+                            }
+                        }
+                    }
+                    GridDataItem parentItem = e.Item.OwnerTableView.ParentItem;
+                    objSchoolProgramFeesDetail.SchoolProgramId = new System.Guid(e.Item.OwnerTableView.ParentItem.OwnerTableView.DataKeyValues[parentItem.ItemIndex]["Id"].ToString());
+                    if (!string.IsNullOrEmpty(Amount))
+                    {
+                        decimal amountresult = 0;
+                        decimal.TryParse(Amount, out amountresult);
+                        if (amountresult == 0)
+                        {
+                            objSchoolProgramFeesDetail.Fees = amountresult;
+                            MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                            MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Pease enter valid Fees.", "false"));
+                            return false;
+                        }
+                        else
+                        {
+                            objSchoolProgramFeesDetail.Fees = amountresult;
+                        }
+
+                    }
+                    if (e.CommandName != "PerformInsert")
+                    {
+                        if (Session["StaffId"] != null)
+                        {
+                            objSchoolProgramFeesDetail.LastmodifiedById = new Guid(Session["StaffId"].ToString());
+                            // objSchoolProgram.LastModifiedById = new Guid(Session["StaffId"].ToString());
+                        }
+                        objSchoolProgramFeesDetail.Id = new Guid(e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Id"].ToString());
+                    }
+                    else
+                    {
+                        if (Session["StaffId"] != null)
+                        {
+                            objSchoolProgramFeesDetail.CreatedById = new Guid(Session["StaffId"].ToString());
+                            objSchoolProgramFeesDetail.LastmodifiedById = new Guid(Session["StaffId"].ToString());
+                            // objSchoolProgram.CreatedById = new Guid(Session["StaffId"].ToString());
+                            // objSchoolProgram.LastModifiedById = new Guid(Session["StaffId"].ToString());
+                        }
+                    }
+
+                    //GridDataItem parentItem = e.Item.OwnerTableView.ParentItem;
+                    // objSchoolProgramFeesDetail.SchoolProgramId = new System.Guid(e.Item.OwnerTableView.ParentItem.OwnerTableView.DataKeyValues[parentItem.ItemIndex]["Id"].ToString());
+                    if (proxySchoolProgramFeesDetail.Save(objSchoolProgramFeesDetail))
+                    {
+                        MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                        MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Saved Successfully", "false"));
+                        result = true;
+                        ViewState["IsPreRenderCall"] = null;
+                    }
+                    else
+                    {
+                        result = false;
+                    }
+
+                }
+            }
+            return result;
+        }
+    }
+}

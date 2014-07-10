@@ -1,0 +1,16 @@
+[10/17/2013 09:50:04 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[10/17/2013 09:50:04 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[10/17/2013 09:55:21 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[10/17/2013 09:55:21 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[10/17/2013 09:55:30 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[10/17/2013 09:55:30 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[10/17/2013 09:56:45 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[10/17/2013 09:56:45 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[10/17/2013 09:57:34 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[10/17/2013 09:57:34 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[10/17/2013 09:57:48 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[10/17/2013 09:57:48 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[10/17/2013 09:57:53 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[10/17/2013 09:57:53 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[10/17/2013 09:57:57 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[10/17/2013 09:57:57 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called

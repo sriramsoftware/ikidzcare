@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{064FFDFA-447E-4983-9EDC-317C9EB7BC97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DayCareDAL</RootNamespace>
+    <AssemblyName>DayCareDAL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clAbsentReason.cs" />
+    <Compile Include="clAddEditChild.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="clAdditionalNotes.cs" />
+    <Compile Include="clChargeCode.cs" />
+    <Compile Include="clChildAbsentHistory.cs" />
+    <Compile Include="clChilData.cs" />
+    <Compile Include="clChildAttendanceHistory.cs" />
+    <Compile Include="clChildEnrollmentStatus.cs" />
+    <Compile Include="clChildFamily.cs" />
+    <Compile Include="clChildList.cs" />
+    <Compile Include="clChildProgEnrollment.cs" />
+    <Compile Include="clChildProgEnrollmentFeeDetail.cs" />
+    <Compile Include="clChildSchedule.cs" />
+    <Compile Include="clChildSchoolYear.cs" />
+    <Compile Include="clClassCategory.cs" />
+    <Compile Include="clClassRoom.cs" />
+    <Compile Include="clConnection.cs" />
+    <Compile Include="clCountry.cs" />
+    <Compile Include="clEmploymentStatus.cs" />
+    <Compile Include="clEnrollmentStatus.cs" />
+    <Compile Include="clFamilyData.cs" />
+    <Compile Include="clFamilyPayment.cs" />
+    <Compile Include="clFeesPeriod.cs" />
+    <Compile Include="clFont.cs" />
+    <Compile Include="clLedger.cs" />
+    <Compile Include="clLedgerOfFamily.cs" />
+    <Compile Include="clMyAccount.cs" />
+    <Compile Include="clProgClassCategory.cs" />
+    <Compile Include="clProgClassRoom.cs" />
+    <Compile Include="clProgSchedule.cs" />
+    <Compile Include="clProgStaff.cs" />
+    <Compile Include="clRelationship.cs" />
+    <Compile Include="clRole.cs" />
+    <Compile Include="clSchedular.cs" />
+    <Compile Include="clSchool.cs" />
+    <Compile Include="clSchoolProgram.cs" />
+    <Compile Include="clSchoolProgramFeesDetail.cs" />
+    <Compile Include="clSchoolYear.cs" />
+    <Compile Include="clStaff.cs" />
+    <Compile Include="clStaffAttendanceHistoryList.cs" />
+    <Compile Include="clStaffAttendenceHistory.cs" />
+    <Compile Include="clStaffCategory.cs" />
+    <Compile Include="clStaffSchoolYear.cs" />
+    <Compile Include="clState.cs" />
+    <Compile Include="clSyncLog.cs" />
+    <Compile Include="clUserGroup.cs" />
+    <Compile Include="clHoursOfOperation.cs" />
+    <Compile Include="DayCare.cs">
+      <DependentUpon>DayCare.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DayCare.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DayCare.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DayCare.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DayCare.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DayCare.dbml.layout">
+      <DependentUpon>DayCare.dbml</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DayCarePL\DayCarePL.csproj">
+      <Project>{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}</Project>
+      <Name>DayCarePL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

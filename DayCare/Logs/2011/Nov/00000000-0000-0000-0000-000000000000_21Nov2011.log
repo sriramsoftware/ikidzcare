@@ -1,0 +1,8 @@
+[11/21/2011 5:58:17 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[11/21/2011 5:58:18 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[11/21/2011 5:58:24 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[11/21/2011 5:58:25 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[11/21/2011 5:58:41 PM][INFO][clChildList][LoadChildAttendanceHistoryList][00000000-0000-0000-0000-000000000000] LoadChildAttendanceHistoryList method called
+[11/21/2011 5:58:41 PM][DEBUG][clFamilyPayment][LoadChildAttendanceHistoryList][00000000-0000-0000-0000-000000000000] Debug LoadChildAttendanceHistoryList called
+[11/21/2011 5:58:41 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[11/21/2011 5:58:41 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method

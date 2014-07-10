@@ -1,0 +1,13 @@
+[10/09/2012 11:05:10 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[10/09/2012 11:05:10 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[10/09/2012 11:10:38 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[10/09/2012 11:10:38 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[10/09/2012 11:10:38 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[10/09/2012 11:22:04 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[10/09/2012 11:22:04 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[10/09/2012 11:22:12 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[10/09/2012 11:22:12 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[10/09/2012 11:23:25 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[10/09/2012 11:23:25 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[10/09/2012 11:54:05 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[10/09/2012 11:54:05 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called

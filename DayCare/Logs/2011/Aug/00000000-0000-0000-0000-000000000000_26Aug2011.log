@@ -1,0 +1,372 @@
+[8/26/2011 1:43:05 PM][EXCEPTION][clStaff][LoadClassRoomWithAssignedStaff][00000000-0000-0000-0000-000000000000] Procedure or function spJSONGetClassRoomStaff has too many arguments specified.
+[8/26/2011 1:43:59 PM][EXCEPTION][clStaff][LoadClassRoomWithAssignedStaff][00000000-0000-0000-0000-000000000000] Procedure or function spJSONGetClassRoomStaff has too many arguments specified.
+[8/26/2011 1:55:50 PM][DEBUG][clStaff][ValidateUser][00000000-0000-0000-0000-000000000000] ValidateUser function debug
+[8/26/2011 3:03:57 PM][EXCEPTION][clStaff][LoadChildListByClassRoomId][00000000-0000-0000-0000-000000000000] Nullable object must have a value.
+[8/26/2011 3:05:42 PM][EXCEPTION][clStaff][LoadChildListByClassRoomId][00000000-0000-0000-0000-000000000000] Invalid attempt to call Read when reader is closed.
+[8/26/2011 3:14:13 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:14:13 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:14:17 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 3:14:17 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 3:14:17 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 3:14:17 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 3:14:20 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 3:14:20 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 3:14:20 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:14:20 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:14:20 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:14:20 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:14:20 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:14:20 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:14:20 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:14:20 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:14:28 PM][INFO][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo called
+[8/26/2011 3:14:28 PM][DEBUG][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo Of Role
+[8/26/2011 3:14:28 PM][INFO][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo method called
+[8/26/2011 3:14:28 PM][DEBUG][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo called
+[8/26/2011 3:14:47 PM][INFO][Staff][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 3:14:47 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of MyAccountDetails
+[8/26/2011 3:14:47 PM][INFO][clStaff][LoadMyAccountDetails][00000000-0000-0000-0000-000000000000] Execute LoadMyAccountDetails Method
+[8/26/2011 3:16:30 PM][INFO][clHoursOfOperation][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 3:16:30 PM][DEBUG][clHoursOfOperation][LoadHoursOfOperation][00000000-0000-0000-0000-000000000000] Debug LoadHoursOfOperation Method
+[8/26/2011 3:16:34 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 3:16:34 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 3:16:34 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:34 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:34 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:34 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:34 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:34 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:34 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:34 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:37 PM][INFO][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Execute LoadUserGroup Method
+[8/26/2011 3:16:37 PM][DEBUG][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Debug LoadUserGroup Method
+[8/26/2011 3:16:43 PM][INFO][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadSchoolYear Method
+[8/26/2011 3:16:43 PM][DEBUG][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadSchoolYear Method
+[8/26/2011 3:16:48 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 3:16:48 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 3:16:48 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:48 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:48 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:48 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:48 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:48 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:48 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 3:16:48 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 3:16:50 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 3:16:50 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 3:16:50 PM][INFO][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Execute LoadUserGroup Method
+[8/26/2011 3:16:50 PM][DEBUG][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Debug LoadUserGroup Method
+[8/26/2011 3:16:50 PM][INFO][clStaffCategory][loadStaffCategory][00000000-0000-0000-0000-000000000000] Execute loadStaffCategory Method
+[8/26/2011 3:16:50 PM][DEBUG][clStaffCategory][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 3:16:50 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 3:16:50 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 3:59:26 PM][EXCEPTION][clStaff][LoadChildListByClassRoomId][00000000-0000-0000-0000-000000000000] Login failed for user 'sa'.
+[8/26/2011 4:18:50 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:18:50 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:18:58 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 4:18:58 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 4:18:58 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:18:58 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:19:01 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 4:19:01 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 4:19:02 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:19:02 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:19:03 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:19:03 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:19:03 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:19:03 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:19:03 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:19:03 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:19:09 PM][INFO][clHoursOfOperation][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 4:19:09 PM][DEBUG][clHoursOfOperation][LoadHoursOfOperation][00000000-0000-0000-0000-000000000000] Debug LoadHoursOfOperation Method
+[8/26/2011 4:19:12 PM][INFO][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadSchoolYear Method
+[8/26/2011 4:19:12 PM][DEBUG][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadSchoolYear Method
+[8/26/2011 4:20:48 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:20:48 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:20:54 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 4:20:54 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 4:20:54 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:20:54 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:21:03 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 4:21:03 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 4:21:04 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:04 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:04 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:04 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:04 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:04 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:04 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:04 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:10 PM][INFO][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadSchoolYear Method
+[8/26/2011 4:21:10 PM][DEBUG][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadSchoolYear Method
+[8/26/2011 4:21:13 PM][INFO][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Execute LoadUserGroup Method
+[8/26/2011 4:21:13 PM][DEBUG][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Debug LoadUserGroup Method
+[8/26/2011 4:21:17 PM][INFO][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadSchoolYear Method
+[8/26/2011 4:21:17 PM][DEBUG][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadSchoolYear Method
+[8/26/2011 4:21:19 PM][INFO][clClassCategory][LoadClassCategory][00000000-0000-0000-0000-000000000000] Execute LoadClassCategory Method
+[8/26/2011 4:21:19 PM][DEBUG][clClassCategory][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:24 PM][INFO][clClassCategory][LoadClassCategory][00000000-0000-0000-0000-000000000000] Execute LoadClassCategory Method
+[8/26/2011 4:21:24 PM][DEBUG][clClassCategory][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:30 PM][INFO][clStaffCategory][loadStaffCategory][00000000-0000-0000-0000-000000000000] Execute loadStaffCategory Method
+[8/26/2011 4:21:30 PM][DEBUG][clStaffCategory][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:32 PM][INFO][clEnrollmentStatus][LoadEnrollmentStatus][00000000-0000-0000-0000-000000000000] Execute LoadEnrollmentStatus Method
+[8/26/2011 4:21:32 PM][DEBUG][clEnrollmentStatus][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:35 PM][INFO][clAbsentReason][LoadAbsentReason][00000000-0000-0000-0000-000000000000] Execute LoadAbsentReason Method
+[8/26/2011 4:21:35 PM][DEBUG][clAbsentReason][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:38 PM][INFO][clAbsentReason][LoadAbsentReason][00000000-0000-0000-0000-000000000000] Execute LoadAbsentReason Method
+[8/26/2011 4:21:38 PM][DEBUG][clAbsentReason][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:41 PM][INFO][clRelationship][LoadRelationship][00000000-0000-0000-0000-000000000000] Execute LoadRelationship Method
+[8/26/2011 4:21:41 PM][DEBUG][clRelationship][LoadRelationship][00000000-0000-0000-0000-000000000000] Debug LoadRelationship Method
+[8/26/2011 4:21:43 PM][INFO][clChargeCode][LoadChargeCode][00000000-0000-0000-0000-000000000000] Execute LoadChargeCode Method
+[8/26/2011 4:21:43 PM][DEBUG][clChargeCode][LoadChargeCode][00000000-0000-0000-0000-000000000000] Debug LoadChargeCode Method
+[8/26/2011 4:21:45 PM][INFO][clFont][LoadFont][00000000-0000-0000-0000-000000000000] Execute LoadFont Method
+[8/26/2011 4:21:45 PM][DEBUG][clFont][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:48 PM][INFO][clHoursOfOperation][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 4:21:48 PM][DEBUG][clHoursOfOperation][LoadHoursOfOperation][00000000-0000-0000-0000-000000000000] Debug LoadHoursOfOperation Method
+[8/26/2011 4:21:50 PM][INFO][clClassRoom][LoadClassRoom][00000000-0000-0000-0000-000000000000] Execute LoadClassRoom Method
+[8/26/2011 4:21:50 PM][DEBUG][clClassRoom][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:52 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 4:21:52 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 4:21:53 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:53 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:53 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:53 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:53 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:53 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:53 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 4:21:53 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 4:21:56 PM][INFO][clFeesPeriod][LoadFeesPeriod][00000000-0000-0000-0000-000000000000] Execute LoadFeesPeriod Method
+[8/26/2011 4:21:56 PM][DEBUG][clFeesPeriod][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 4:21:59 PM][INFO][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Execute LoadSchoolProgram Method
+[8/26/2011 4:21:59 PM][DEBUG][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Debug LoadSchoolProgram Method
+[8/26/2011 4:22:02 PM][INFO][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo called
+[8/26/2011 4:22:02 PM][DEBUG][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo Of Role
+[8/26/2011 4:22:02 PM][INFO][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo method called
+[8/26/2011 4:22:02 PM][DEBUG][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo called
+[8/26/2011 4:22:09 PM][INFO][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Execute LoadFamilyData Method
+[8/26/2011 4:22:09 PM][DEBUG][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Debug LoadFamilyData Method
+[8/26/2011 4:22:09 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:22:09 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:35:36 PM][INFO][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Execute LoadFamilyData Method
+[8/26/2011 4:35:36 PM][DEBUG][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Debug LoadFamilyData Method
+[8/26/2011 4:35:36 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:35:36 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:35:39 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:35:39 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:35:39 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:35:39 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:35:57 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:35:57 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:35:57 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:35:57 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:35:57 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:35:57 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:36:01 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:36:01 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:36:01 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:36:01 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:36:01 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:36:01 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:36:06 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:36:06 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:36:06 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:36:06 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:36:06 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:36:06 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:36:08 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:36:08 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:36:08 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:36:08 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:36:08 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:36:08 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:36:10 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:36:10 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:36:10 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:36:10 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:36:10 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:36:10 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:36:12 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:36:12 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:36:12 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:36:12 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:36:12 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:36:12 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:36:14 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:36:14 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:36:14 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:36:14 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:36:14 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:36:14 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:36:15 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:36:15 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:36:15 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:36:15 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:36:15 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:36:15 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:37:08 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:37:08 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:37:08 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:37:08 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:37:08 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:37:08 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:37:09 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:37:09 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:37:11 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:37:11 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:37:11 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:37:11 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:37:11 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:37:11 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:37:14 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 4:37:14 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 4:37:14 PM][INFO][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 4:37:14 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of ChildData
+[8/26/2011 4:37:14 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 4:37:14 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 4:38:22 PM][INFO][clClassRoom][LoadClassRoom][00000000-0000-0000-0000-000000000000] Execute LoadClassRoom Method
+[8/26/2011 4:38:22 PM][DEBUG][clClassRoom][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 5:06:09 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:06:09 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:06:13 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 5:06:13 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 5:06:13 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 5:06:13 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 5:06:15 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 5:06:15 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 5:06:16 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:06:16 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:06:16 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:06:16 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:06:16 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:06:16 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:06:16 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:06:16 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:06:21 PM][INFO][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo called
+[8/26/2011 5:06:21 PM][DEBUG][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo Of Role
+[8/26/2011 5:06:21 PM][INFO][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo method called
+[8/26/2011 5:06:21 PM][DEBUG][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo called
+[8/26/2011 5:13:14 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:13:14 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:13:17 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 5:13:17 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 5:13:17 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 5:13:17 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 5:13:19 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 5:13:19 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 5:13:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:13:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:13:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:13:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:13:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:13:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:13:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:13:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:13:25 PM][INFO][Staff][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 5:13:25 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of MyAccountDetails
+[8/26/2011 5:13:25 PM][INFO][clStaff][LoadMyAccountDetails][00000000-0000-0000-0000-000000000000] Execute LoadMyAccountDetails Method
+[8/26/2011 5:14:25 PM][INFO][clHoursOfOperation][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 5:14:25 PM][DEBUG][clHoursOfOperation][LoadHoursOfOperation][00000000-0000-0000-0000-000000000000] Debug LoadHoursOfOperation Method
+[8/26/2011 5:14:32 PM][INFO][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo called
+[8/26/2011 5:14:32 PM][DEBUG][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo Of Role
+[8/26/2011 5:14:32 PM][INFO][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo method called
+[8/26/2011 5:14:32 PM][DEBUG][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo called
+[8/26/2011 5:14:36 PM][INFO][Staff][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 5:14:36 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of MyAccountDetails
+[8/26/2011 5:14:36 PM][INFO][clStaff][LoadMyAccountDetails][00000000-0000-0000-0000-000000000000] Execute LoadMyAccountDetails Method
+[8/26/2011 5:14:54 PM][INFO][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Execute LoadUserGroup Method
+[8/26/2011 5:14:54 PM][DEBUG][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Debug LoadUserGroup Method
+[8/26/2011 5:15:20 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 5:15:20 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 5:15:20 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 5:15:20 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 5:15:24 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 5:15:24 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 5:15:24 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:15:24 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:15:24 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:15:24 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:15:24 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:15:24 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:15:24 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:15:24 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:15:26 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 5:15:26 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 5:36:05 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:36:05 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:36:15 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:36:15 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:36:15 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 5:36:15 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 5:36:15 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 5:36:15 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 5:36:18 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 5:36:18 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 5:36:18 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:36:18 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 5:36:22 PM][INFO][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Execute LoadUserGroup Method
+[8/26/2011 5:36:22 PM][DEBUG][clUserGroup][LoadUserGroup][00000000-0000-0000-0000-000000000000] Debug LoadUserGroup Method
+[8/26/2011 5:36:24 PM][INFO][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadSchoolYear Method
+[8/26/2011 5:36:24 PM][DEBUG][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadSchoolYear Method
+[8/26/2011 5:36:28 PM][INFO][clClassCategory][LoadClassCategory][00000000-0000-0000-0000-000000000000] Execute LoadClassCategory Method
+[8/26/2011 5:36:28 PM][DEBUG][clClassCategory][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 5:36:31 PM][INFO][clAbsentReason][LoadAbsentReason][00000000-0000-0000-0000-000000000000] Execute LoadAbsentReason Method
+[8/26/2011 5:36:31 PM][DEBUG][clAbsentReason][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 5:36:34 PM][INFO][clAbsentReason][LoadAbsentReason][00000000-0000-0000-0000-000000000000] Execute LoadAbsentReason Method
+[8/26/2011 5:36:34 PM][DEBUG][clAbsentReason][Save][00000000-0000-0000-0000-000000000000] Debug Save Method
+[8/26/2011 5:36:37 PM][INFO][clRelationship][LoadRelationship][00000000-0000-0000-0000-000000000000] Execute LoadRelationship Method
+[8/26/2011 5:36:37 PM][DEBUG][clRelationship][LoadRelationship][00000000-0000-0000-0000-000000000000] Debug LoadRelationship Method
+[8/26/2011 5:36:39 PM][INFO][clChargeCode][LoadChargeCode][00000000-0000-0000-0000-000000000000] Execute LoadChargeCode Method
+[8/26/2011 5:36:39 PM][DEBUG][clChargeCode][LoadChargeCode][00000000-0000-0000-0000-000000000000] Debug LoadChargeCode Method
+[8/26/2011 5:36:51 PM][INFO][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Execute LoadFamilyData Method
+[8/26/2011 5:36:51 PM][DEBUG][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Debug LoadFamilyData Method
+[8/26/2011 5:37:45 PM][INFO][Staff][SubmitRecord][00000000-0000-0000-0000-000000000000] Submit record method called
+[8/26/2011 5:37:45 PM][DEBUG][ChildData][SubmitRecord][00000000-0000-0000-0000-000000000000] Debug Submit Record Of MyAccountDetails
+[8/26/2011 5:37:45 PM][INFO][clStaff][LoadMyAccountDetails][00000000-0000-0000-0000-000000000000] Execute LoadMyAccountDetails Method
+[8/26/2011 5:37:49 PM][INFO][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Execute LoadFamilyData Method
+[8/26/2011 5:37:49 PM][DEBUG][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Debug LoadFamilyData Method
+[8/26/2011 5:37:52 PM][INFO][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo called
+[8/26/2011 5:37:52 PM][DEBUG][School][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo Of Role
+[8/26/2011 5:37:52 PM][INFO][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] LoadSchoolInfo method called
+[8/26/2011 5:37:52 PM][DEBUG][clSchool][LoadSchoolInfo][00000000-0000-0000-0000-000000000000] Debug LoadSchoolInfo called
+[8/26/2011 5:37:54 PM][INFO][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Execute LoadSchoolProgram Method
+[8/26/2011 5:37:54 PM][DEBUG][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Debug LoadSchoolProgram Method
+[8/26/2011 5:38:08 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:38:08 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:38:08 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 5:38:08 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 5:38:08 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 5:38:08 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 5:41:04 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 5:41:04 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 5:41:04 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 5:41:04 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 6:33:10 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 6:33:10 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 6:33:14 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[8/26/2011 6:33:14 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[8/26/2011 6:33:14 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 6:33:14 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 6:33:19 PM][INFO][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Execute LoadStaff Method
+[8/26/2011 6:33:19 PM][DEBUG][clStaff][LoadStaff][00000000-0000-0000-0000-000000000000] Debug LoadStaff Method
+[8/26/2011 6:33:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 6:33:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 6:33:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 6:33:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 6:33:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 6:33:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 6:33:19 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[8/26/2011 6:33:19 PM][INFO][clStaff][ISStaffinCurrentYear][00000000-0000-0000-0000-000000000000] ISStaffinCurrentYear function debug
+[8/26/2011 6:33:26 PM][INFO][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Execute LoadSchoolProgram Method
+[8/26/2011 6:33:26 PM][DEBUG][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Debug LoadSchoolProgram Method
+[8/26/2011 6:33:31 PM][INFO][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Execute LoadFamilyData Method
+[8/26/2011 6:33:31 PM][DEBUG][clFamilyData][LoadFamilyData][00000000-0000-0000-0000-000000000000] Debug LoadFamilyData Method
+[8/26/2011 6:33:31 PM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[8/26/2011 6:33:31 PM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[8/26/2011 6:33:33 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 6:33:33 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 6:33:33 PM][INFO][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Execute LoadChildDataList Method
+[8/26/2011 6:33:33 PM][DEBUG][clChildData][LoadChildDataList][00000000-0000-0000-0000-000000000000] Debug LoadChildDataList Method
+[8/26/2011 6:33:37 PM][INFO][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Execute LoadSchoolProgram Method
+[8/26/2011 6:33:37 PM][DEBUG][clSchoolProgram][LoadSchoolProgram][00000000-0000-0000-0000-000000000000] Debug LoadSchoolProgram Method
+[8/26/2011 6:33:37 PM][INFO][clChildSchedule][LoadChildSchedule][00000000-0000-0000-0000-000000000000] Execute LoadChildSchedule Method
+[8/26/2011 6:33:37 PM][DEBUG][clChildSchedule][LoadChildSchedule][00000000-0000-0000-0000-000000000000] Debug LoadChildSchedule Method

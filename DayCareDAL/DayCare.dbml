@@ -1,0 +1,1523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="iKidzCareLive" Class="DayCareDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=IGLOBE-SERVER;Initial Catalog=iKidzCareLive;User ID=sa" SettingsObjectName="DayCareDAL.Properties.Settings" SettingsPropertyName="iKidzCareLiveConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AbsentReason" Member="AbsentReasons">
+    <Type Name="AbsentReason">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Reason" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="BillingAffected" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="AbsentReason_ChildAbsentHistory" Member="ChildAbsentHistories" ThisKey="Id" OtherKey="AbsentReasonId" Type="ChildAbsentHistory" />
+      <Association Name="School_AbsentReason" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildAbsentHistory" Member="ChildAbsentHistories">
+    <Type Name="ChildAbsentHistory">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AbsentReasonId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="AbsentReason_ChildAbsentHistory" Member="AbsentReason" ThisKey="AbsentReasonId" OtherKey="Id" Type="AbsentReason" IsForeignKey="true" />
+      <Association Name="ChildSchoolYear_ChildAbsentHistory" Member="ChildSchoolYear" ThisKey="ChildSchoolYearId" OtherKey="Id" Type="ChildSchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildAttendenceHistory" Member="ChildAttendenceHistories">
+    <Type Name="ChildAttendenceHistory">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CheckInCheckOut" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CheckInCheckOutDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ChildSchoolYear_ChildAttendenceHistory" Member="ChildSchoolYear" ThisKey="ChildSchoolYearId" OtherKey="Id" Type="ChildSchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClassCategory" Member="ClassCategories">
+    <Type Name="ClassCategory">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ClassCategory_ProgClassCategory" Member="ProgClassCategories" ThisKey="Id" OtherKey="ClassCategoryId" Type="ProgClassCategory" />
+      <Association Name="School_ClassCategory" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Country_FamilyData" Member="FamilyDatas" ThisKey="Id" OtherKey="CountryId" Type="FamilyData" />
+      <Association Name="Country_School" Member="Schools" ThisKey="Id" OtherKey="CountryId" Type="School" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EnrollmentStatus" Member="EnrollmentStatus">
+    <Type Name="EnrollmentStatus">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="EnrollmentStatus_ChildProgEnrollmentFeeDetail" Member="ChildProgEnrollmentFeeDetails" ThisKey="Id" OtherKey="EnrollmentStatusId" Type="ChildProgEnrollmentFeeDetail" />
+      <Association Name="EnrollmentStatus_ChildEnrollmentStatus" Member="ChildEnrollmentStatus" ThisKey="Id" OtherKey="EnrollmentStatusId" Type="ChildEnrollmentStatus" />
+      <Association Name="School_EnrollmentStatus" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Relationship" Member="Relationships">
+    <Type Name="Relationship">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Relationship_FamilyData" Member="FamilyDatas" ThisKey="Id" OtherKey="RelationShipId" Type="FamilyData" />
+      <Association Name="School_Relationship" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StaffCategory" Member="StaffCategories">
+    <Type Name="StaffCategory">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="School_StaffCategory" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.State" Member="States">
+    <Type Name="State">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="State_FamilyData" Member="FamilyDatas" ThisKey="Id" OtherKey="StateId" Type="FamilyData" />
+      <Association Name="State_ChildFamily" Member="ChildFamilies" ThisKey="Id" OtherKey="StateId" Type="ChildFamily" />
+      <Association Name="State_School" Member="Schools" ThisKey="Id" OtherKey="StateId" Type="School" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TimeZone" Member="TimeZones">
+    <Type Name="TimeZone">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TimeZoneUniqueName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TimeZone" Member="TimeZone1" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="StandardName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DaylightName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TimeZoneValue" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="SupportDaylightSavingTime" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="CreatedByid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TimeZone_School" Member="Schools" ThisKey="Id" OtherKey="TimeZoneId" Type="School" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChargeCode" Member="ChargeCodes">
+    <Type Name="ChargeCode">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Category" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DebitCrdit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ChargeCode_Ledger" Member="Ledgers" ThisKey="Id" OtherKey="ChargeCodeCategoryId" Type="Ledger" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FeesPeriod" Member="FeesPeriods">
+    <Type Name="FeesPeriod">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="FeesPeriod_SchoolProgramFeesDetail" Member="SchoolProgramFeesDetails" ThisKey="Id" OtherKey="FeesPeriodId" Type="SchoolProgramFeesDetail" />
+      <Association Name="FeesPeriod_ChildProgEnrollmentFeeDetail" Member="ChildProgEnrollmentFeeDetails" ThisKey="Id" OtherKey="FeesPeriodId" Type="ChildProgEnrollmentFeeDetail" />
+      <Association Name="FeesPeriod_ChildProgEnrollment" Member="ChildProgEnrollments" ThisKey="Id" OtherKey="FeesPeriodId" Type="ChildProgEnrollment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Role_UserGroup" Member="UserGroups" ThisKey="Id" OtherKey="RoleId" Type="UserGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProgClassCategory" Member="ProgClassCategories">
+    <Type Name="ProgClassCategory">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassCategoryId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ClassCategory_ProgClassCategory" Member="ClassCategory" ThisKey="ClassCategoryId" OtherKey="Id" Type="ClassCategory" IsForeignKey="true" />
+      <Association Name="SchoolProgram_ProgClassCategory" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProgStaff" Member="ProgStaffs">
+    <Type Name="ProgStaff">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="SchoolProgram_ProgStaff" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+      <Association Name="Staff_ProgStaff" Member="Staff" ThisKey="StaffId" OtherKey="Id" Type="Staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserGroup" Member="UserGroups">
+    <Type Name="UserGroup">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="GroupTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Role_UserGroup" Member="Role" ThisKey="RoleId" OtherKey="Id" Type="Role" IsForeignKey="true" />
+      <Association Name="School_UserGroup" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Font" Member="Fonts">
+    <Type Name="Font">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Color" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Size" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClassRoom" Member="ClassRooms">
+    <Type Name="ClassRoom">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaxSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ClassRoom_ProgClassRoom" Member="ProgClassRooms" ThisKey="Id" OtherKey="ClassRoomId" Type="ProgClassRoom" />
+      <Association Name="ClassRoom_ClassRoomSchoolYear" Member="ClassRoomSchoolYears" ThisKey="Id" OtherKey="ClassRoomId" Type="ClassRoomSchoolYear" />
+      <Association Name="School_ClassRoom" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StaffAttendenceHistory" Member="StaffAttendenceHistories">
+    <Type Name="StaffAttendenceHistory">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StaffSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CheckInCheckOut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CheckInCheckOutDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="StaffSchoolYear_StaffAttendenceHistory" Member="StaffSchoolYear" ThisKey="StaffSchoolYearId" OtherKey="Id" Type="StaffSchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HoursOfOperation" Member="HoursOfOperations">
+    <Type Name="HoursOfOperation">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OpenTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CloseTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="School_HoursOfOperation" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProgSchedule" Member="ProgSchedules">
+    <Type Name="ProgSchedule">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BeginTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ProgSchedule_ChildSchedule" Member="ChildSchedules" ThisKey="Id" OtherKey="ProgScheduleId" Type="ChildSchedule" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FamilyData" Member="FamilyDatas">
+    <Type Name="FamilyData">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RelationShipId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IdInfo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MainPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SecondaryPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SecurityQuestion" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SecurityAnswer" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Country_FamilyData" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+      <Association Name="Relationship_FamilyData" Member="Relationship" ThisKey="RelationShipId" OtherKey="Id" Type="Relationship" IsForeignKey="true" />
+      <Association Name="State_FamilyData" Member="State" ThisKey="StateId" OtherKey="Id" Type="State" IsForeignKey="true" />
+      <Association Name="ChildFamily_FamilyData" Member="ChildFamily" ThisKey="ChildFamilyId" OtherKey="Id" Type="ChildFamily" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EmploymentStatus" Member="EmploymentStatus">
+    <Type Name="EmploymentStatus">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="EmploymentStatus_Staff" Member="Staffs" ThisKey="Id" OtherKey="EmploymentStatusId" Type="Staff" />
+      <Association Name="School_EmploymentStatus" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildSchedule" Member="ChildSchedules">
+    <Type Name="ChildSchedule">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgScheduleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BeginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ProgSchedule_ChildSchedule" Member="ProgSchedule" ThisKey="ProgScheduleId" OtherKey="Id" Type="ProgSchedule" IsForeignKey="true" />
+      <Association Name="SchoolProgram_ChildSchedule" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+      <Association Name="ProgClassRoom_ChildSchedule" Member="ProgClassRoom" ThisKey="ProgClassRoomId" OtherKey="Id" Type="ProgClassRoom" IsForeignKey="true" />
+      <Association Name="ProgClassRoom_ChildSchedule1" Member="ProgClassRoom1" ThisKey="ProgClassRoomId" OtherKey="Id" Type="ProgClassRoom" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PostDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaymentMethod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PaymentDetail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Payment_Ledger" Member="Ledgers" ThisKey="Id" OtherKey="PaymentId" Type="Ledger" />
+      <Association Name="ChildFamily_Payment" Member="ChildFamily" ThisKey="ChildFamilyId" OtherKey="Id" Type="ChildFamily" IsForeignKey="true" />
+      <Association Name="SchoolYear_Payment" Member="SchoolYear" ThisKey="SchoolYearId" OtherKey="Id" Type="SchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolProgramFeesDetail" Member="SchoolProgramFeesDetails">
+    <Type Name="SchoolProgramFeesDetail">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EffectiveYearDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffectiveMonthDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveWeekDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="FeesPeriod_SchoolProgramFeesDetail" Member="FeesPeriod" ThisKey="FeesPeriodId" OtherKey="Id" Type="FeesPeriod" IsForeignKey="true" />
+      <Association Name="SchoolProgram_SchoolProgramFeesDetail" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildProgEnrollmentFeeDetail" Member="ChildProgEnrollmentFeeDetails">
+    <Type Name="ChildProgEnrollmentFeeDetail">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="EffectiveYearDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffectiveMonthDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveWeekDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreatedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastmodiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastmodifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnrollmentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnrollmentStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EnrollmentStatusId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="EnrollmentStatus_ChildProgEnrollmentFeeDetail" Member="EnrollmentStatus1" ThisKey="EnrollmentStatusId" OtherKey="Id" Type="EnrollmentStatus" IsForeignKey="true" />
+      <Association Name="FeesPeriod_ChildProgEnrollmentFeeDetail" Member="FeesPeriod" ThisKey="FeesPeriodId" OtherKey="Id" Type="FeesPeriod" IsForeignKey="true" />
+      <Association Name="SchoolProgram_ChildProgEnrollmentFeeDetail" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+      <Association Name="ChildFamily_ChildProgEnrollmentFeeDetail" Member="ChildFamily" ThisKey="ChildFamilyId" OtherKey="Id" Type="ChildFamily" IsForeignKey="true" />
+      <Association Name="ChildSchoolYear_ChildProgEnrollmentFeeDetail" Member="ChildSchoolYear" ThisKey="ChildSchoolYearId" OtherKey="Id" Type="ChildSchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildProgEnrollment" Member="ChildProgEnrollments">
+    <Type Name="ChildProgEnrollment">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DayType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="FeesPeriod_ChildProgEnrollment" Member="FeesPeriod" ThisKey="FeesPeriodId" OtherKey="Id" Type="FeesPeriod" IsForeignKey="true" />
+      <Association Name="SchoolProgram_ChildProgEnrollment" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+      <Association Name="ChildSchoolYear_ChildProgEnrollment" Member="ChildSchoolYear" ThisKey="ChildSchoolYearId" OtherKey="Id" Type="ChildSchoolYear" IsForeignKey="true" />
+      <Association Name="ProgClassRoom_ChildProgEnrollment" Member="ProgClassRoom" ThisKey="ProgClassRoomId" OtherKey="Id" Type="ProgClassRoom" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildData" Member="ChildDatas">
+    <Type Name="ChildData">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SocSec" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ChildData_Ledger" Member="Ledgers" ThisKey="Id" OtherKey="ChildDataId" Type="Ledger" />
+      <Association Name="ChildData_ChildSchoolYear" Member="ChildSchoolYears" ThisKey="Id" OtherKey="ChildDataId" Type="ChildSchoolYear" />
+      <Association Name="ChildFamily_ChildData" Member="ChildFamily" ThisKey="ChildFamilyId" OtherKey="Id" Type="ChildFamily" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildEnrollmentStatus" Member="ChildEnrollmentStatus">
+    <Type Name="ChildEnrollmentStatus">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EnrollmentStatusId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="EnrollmentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="EnrollmentStatus_ChildEnrollmentStatus" Member="EnrollmentStatus" ThisKey="EnrollmentStatusId" OtherKey="Id" Type="EnrollmentStatus" IsForeignKey="true" />
+      <Association Name="ChildSchoolYear_ChildEnrollmentStatus" Member="ChildSchoolYear" ThisKey="ChildSchoolYearId" OtherKey="Id" Type="ChildSchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SyncLog" Member="SyncLogs">
+    <Type Name="SyncLog">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Datetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ledger" Member="Ledgers">
+    <Type Name="Ledger">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildDataId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PaymentId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="TransactionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Detail" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="Debit" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="AllowEdit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="PaymentMethodId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeCodeCategoryId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LateFee" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="ChargeCode_Ledger" Member="ChargeCode" ThisKey="ChargeCodeCategoryId" OtherKey="Id" Type="ChargeCode" IsForeignKey="true" />
+      <Association Name="ChildData_Ledger" Member="ChildData" ThisKey="ChildDataId" OtherKey="Id" Type="ChildData" IsForeignKey="true" />
+      <Association Name="Payment_Ledger" Member="Payment" ThisKey="PaymentId" OtherKey="Id" Type="Payment" IsForeignKey="true" />
+      <Association Name="SchoolProgram_Ledger" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+      <Association Name="ChildFamily_Ledger" Member="ChildFamily" ThisKey="ChildFamilyId" OtherKey="Id" Type="ChildFamily" IsForeignKey="true" />
+      <Association Name="SchoolYear_Ledger" Member="SchoolYear" ThisKey="SchoolYearId" OtherKey="Id" Type="SchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdditionalNotes" Member="AdditionalNotes">
+    <Type Name="AdditionalNote">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CommentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastMidifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ChildSchoolYear_AdditionalNote" Member="ChildSchoolYear" ThisKey="ChildSchoolYearId" OtherKey="Id" Type="ChildSchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolProgram" Member="SchoolPrograms">
+    <Type Name="SchoolProgram">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsPrimary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ProgUniqueId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="SchoolProgram_ProgClassCategory" Member="ProgClassCategories" ThisKey="Id" OtherKey="SchoolProgramId" Type="ProgClassCategory" />
+      <Association Name="SchoolProgram_ProgStaff" Member="ProgStaffs" ThisKey="Id" OtherKey="SchoolProgramId" Type="ProgStaff" />
+      <Association Name="SchoolProgram_ChildSchedule" Member="ChildSchedules" ThisKey="Id" OtherKey="SchoolProgramId" Type="ChildSchedule" />
+      <Association Name="SchoolProgram_SchoolProgramFeesDetail" Member="SchoolProgramFeesDetails" ThisKey="Id" OtherKey="SchoolProgramId" Type="SchoolProgramFeesDetail" />
+      <Association Name="SchoolProgram_ChildProgEnrollmentFeeDetail" Member="ChildProgEnrollmentFeeDetails" ThisKey="Id" OtherKey="SchoolProgramId" Type="ChildProgEnrollmentFeeDetail" />
+      <Association Name="SchoolProgram_ChildProgEnrollment" Member="ChildProgEnrollments" ThisKey="Id" OtherKey="SchoolProgramId" Type="ChildProgEnrollment" />
+      <Association Name="SchoolProgram_Ledger" Member="Ledgers" ThisKey="Id" OtherKey="SchoolProgramId" Type="Ledger" />
+      <Association Name="SchoolProgram_ProgClassRoom" Member="ProgClassRooms" ThisKey="Id" OtherKey="SchoolProgramId" Type="ProgClassRoom" />
+      <Association Name="SchoolYear_SchoolProgram" Member="SchoolYear" ThisKey="SchoolYearId" OtherKey="Id" Type="SchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff" Member="Staffs">
+    <Type Name="Staff">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserGroupId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StaffCategoryId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MainPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SecondaryPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SecurityQuestion" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="SecurityAnswer" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EmploymentStatusId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Staff_ProgStaff" Member="ProgStaffs" ThisKey="Id" OtherKey="StaffId" Type="ProgStaff" />
+      <Association Name="Staff_StaffSchoolYear" Member="StaffSchoolYears" ThisKey="Id" OtherKey="StaffId" Type="StaffSchoolYear" />
+      <Association Name="EmploymentStatus_Staff" Member="EmploymentStatus" ThisKey="EmploymentStatusId" OtherKey="Id" Type="EmploymentStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StaffSchoolYear" Member="StaffSchoolYears">
+    <Type Name="StaffSchoolYear">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="StaffSchoolYear_StaffAttendenceHistory" Member="StaffAttendenceHistories" ThisKey="Id" OtherKey="StaffSchoolYearId" Type="StaffAttendenceHistory" />
+      <Association Name="Staff_StaffSchoolYear" Member="Staff" ThisKey="StaffId" OtherKey="Id" Type="Staff" IsForeignKey="true" />
+      <Association Name="SchoolYear_StaffSchoolYear" Member="SchoolYear" ThisKey="SchoolYearId" OtherKey="Id" Type="SchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildFamily" Member="ChildFamilies">
+    <Type Name="ChildFamily">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MsgDisplayed" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MsgStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ChildFamily_FamilyData" Member="FamilyDatas" ThisKey="Id" OtherKey="ChildFamilyId" Type="FamilyData" />
+      <Association Name="ChildFamily_Payment" Member="Payments" ThisKey="Id" OtherKey="ChildFamilyId" Type="Payment" />
+      <Association Name="ChildFamily_ChildProgEnrollmentFeeDetail" Member="ChildProgEnrollmentFeeDetails" ThisKey="Id" OtherKey="ChildFamilyId" Type="ChildProgEnrollmentFeeDetail" />
+      <Association Name="ChildFamily_ChildData" Member="ChildDatas" ThisKey="Id" OtherKey="ChildFamilyId" Type="ChildData" />
+      <Association Name="ChildFamily_Ledger" Member="Ledgers" ThisKey="Id" OtherKey="ChildFamilyId" Type="Ledger" />
+      <Association Name="ChildFamily_ChildFamilySchoolYear" Member="ChildFamilySchoolYears" ThisKey="Id" OtherKey="ChildFamilyId" Type="ChildFamilySchoolYear" />
+      <Association Name="State_ChildFamily" Member="State" ThisKey="StateId" OtherKey="Id" Type="State" IsForeignKey="true" />
+      <Association Name="School_ChildFamily" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildSchoolYear" Member="ChildSchoolYears">
+    <Type Name="ChildSchoolYear">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildDataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ChildSchoolYear_ChildAbsentHistory" Member="ChildAbsentHistories" ThisKey="Id" OtherKey="ChildSchoolYearId" Type="ChildAbsentHistory" />
+      <Association Name="ChildSchoolYear_ChildAttendenceHistory" Member="ChildAttendenceHistories" ThisKey="Id" OtherKey="ChildSchoolYearId" Type="ChildAttendenceHistory" />
+      <Association Name="ChildSchoolYear_ChildProgEnrollmentFeeDetail" Member="ChildProgEnrollmentFeeDetails" ThisKey="Id" OtherKey="ChildSchoolYearId" Type="ChildProgEnrollmentFeeDetail" />
+      <Association Name="ChildSchoolYear_ChildProgEnrollment" Member="ChildProgEnrollments" ThisKey="Id" OtherKey="ChildSchoolYearId" Type="ChildProgEnrollment" />
+      <Association Name="ChildSchoolYear_ChildEnrollmentStatus" Member="ChildEnrollmentStatus" ThisKey="Id" OtherKey="ChildSchoolYearId" Type="ChildEnrollmentStatus" />
+      <Association Name="ChildSchoolYear_AdditionalNote" Member="AdditionalNotes" ThisKey="Id" OtherKey="ChildSchoolYearId" Type="AdditionalNote" />
+      <Association Name="ChildData_ChildSchoolYear" Member="ChildData" ThisKey="ChildDataId" OtherKey="Id" Type="ChildData" IsForeignKey="true" />
+      <Association Name="SchoolYear_ChildSchoolYear" Member="SchoolYear" ThisKey="SchoolYearId" OtherKey="Id" Type="SchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.School" Member="Schools">
+    <Type Name="School">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CountryId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MainPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SecondaryPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WebSite" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TimeZoneId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CodeRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="iPadHeader" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="iPadHeaderFont" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="iPadHeaderFontSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iPadHeaderColor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="iPadMessage" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="iPadMessageFont" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="iPadMessageFontSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="iPadBackgroundImage" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="iPadMessageColor" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LateFeeAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="School_AbsentReason" Member="AbsentReasons" ThisKey="Id" OtherKey="SchoolId" Type="AbsentReason" />
+      <Association Name="School_ClassCategory" Member="ClassCategories" ThisKey="Id" OtherKey="SchoolId" Type="ClassCategory" />
+      <Association Name="School_EnrollmentStatus" Member="EnrollmentStatus" ThisKey="Id" OtherKey="SchoolId" Type="EnrollmentStatus" />
+      <Association Name="School_Relationship" Member="Relationships" ThisKey="Id" OtherKey="SchoolId" Type="Relationship" />
+      <Association Name="School_StaffCategory" Member="StaffCategories" ThisKey="Id" OtherKey="SchoolId" Type="StaffCategory" />
+      <Association Name="School_UserGroup" Member="UserGroups" ThisKey="Id" OtherKey="SchoolId" Type="UserGroup" />
+      <Association Name="School_ClassRoom" Member="ClassRooms" ThisKey="Id" OtherKey="SchoolId" Type="ClassRoom" />
+      <Association Name="School_HoursOfOperation" Member="HoursOfOperations" ThisKey="Id" OtherKey="SchoolId" Type="HoursOfOperation" />
+      <Association Name="School_EmploymentStatus" Member="EmploymentStatus" ThisKey="Id" OtherKey="SchoolId" Type="EmploymentStatus" />
+      <Association Name="School_ChildFamily" Member="ChildFamilies" ThisKey="Id" OtherKey="SchoolId" Type="ChildFamily" />
+      <Association Name="School_SchoolYear" Member="SchoolYears" ThisKey="Id" OtherKey="SchoolId" Type="SchoolYear" />
+      <Association Name="Country_School" Member="Country" ThisKey="CountryId" OtherKey="Id" Type="Country" IsForeignKey="true" />
+      <Association Name="State_School" Member="State" ThisKey="StateId" OtherKey="Id" Type="State" IsForeignKey="true" />
+      <Association Name="TimeZone_School" Member="TimeZone" ThisKey="TimeZoneId" OtherKey="Id" Type="TimeZone" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SchoolYear" Member="SchoolYears">
+    <Type Name="SchoolYear">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CurrentId" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="OldCurrentSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="SchoolYear_Payment" Member="Payments" ThisKey="Id" OtherKey="SchoolYearId" Type="Payment" />
+      <Association Name="SchoolYear_Ledger" Member="Ledgers" ThisKey="Id" OtherKey="SchoolYearId" Type="Ledger" />
+      <Association Name="SchoolYear_SchoolProgram" Member="SchoolPrograms" ThisKey="Id" OtherKey="SchoolYearId" Type="SchoolProgram" />
+      <Association Name="SchoolYear_StaffSchoolYear" Member="StaffSchoolYears" ThisKey="Id" OtherKey="SchoolYearId" Type="StaffSchoolYear" />
+      <Association Name="SchoolYear_ChildSchoolYear" Member="ChildSchoolYears" ThisKey="Id" OtherKey="SchoolYearId" Type="ChildSchoolYear" />
+      <Association Name="SchoolYear_ChildFamilySchoolYear" Member="ChildFamilySchoolYears" ThisKey="Id" OtherKey="SchoolYearId" Type="ChildFamilySchoolYear" />
+      <Association Name="SchoolYear_ClassRoomSchoolYear" Member="ClassRoomSchoolYears" ThisKey="Id" OtherKey="SchoolYearId" Type="ClassRoomSchoolYear" />
+      <Association Name="School_SchoolYear" Member="School" ThisKey="SchoolId" OtherKey="Id" Type="School" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChildFamilySchoolYear" Member="ChildFamilySchoolYears">
+    <Type Name="ChildFamilySchoolYear">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="createddatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClosingBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="ChildFamily_ChildFamilySchoolYear" Member="ChildFamily" ThisKey="ChildFamilyId" OtherKey="Id" Type="ChildFamily" IsForeignKey="true" />
+      <Association Name="SchoolYear_ChildFamilySchoolYear" Member="SchoolYear" ThisKey="SchoolYearId" OtherKey="Id" Type="SchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProgClassRoom" Member="ProgClassRooms">
+    <Type Name="ProgClassRoom">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ClassRoomSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="ProgClassRoom_ChildSchedule" Member="ChildSchedules" ThisKey="Id" OtherKey="ProgClassRoomId" Type="ChildSchedule" />
+      <Association Name="ProgClassRoom_ChildSchedule1" Member="ChildSchedules1" ThisKey="Id" OtherKey="ProgClassRoomId" Type="ChildSchedule" />
+      <Association Name="ProgClassRoom_ChildProgEnrollment" Member="ChildProgEnrollments" ThisKey="Id" OtherKey="ProgClassRoomId" Type="ChildProgEnrollment" />
+      <Association Name="ClassRoom_ProgClassRoom" Member="ClassRoom" ThisKey="ClassRoomId" OtherKey="Id" Type="ClassRoom" IsForeignKey="true" />
+      <Association Name="SchoolProgram_ProgClassRoom" Member="SchoolProgram" ThisKey="SchoolProgramId" OtherKey="Id" Type="SchoolProgram" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ClassRoomSchoolYear" Member="ClassRoomSchoolYears">
+    <Type Name="ClassRoomSchoolYear">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ClassRoomId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="StaffId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClassRoomName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="ClassRoom_ClassRoomSchoolYear" Member="ClassRoom" ThisKey="ClassRoomId" OtherKey="Id" Type="ClassRoom" IsForeignKey="true" />
+      <Association Name="SchoolYear_ClassRoomSchoolYear" Member="SchoolYear" ThisKey="SchoolYearId" OtherKey="Id" Type="SchoolYear" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spCheckDuplicate" Method="spCheckDuplicate">
+    <Parameter Name="TblName" Parameter="tblName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ColumnName" Parameter="columnName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ColumnValue" Parameter="columnValue" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="result" Type="System.Boolean" DbType="Bit" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetProgStaffList" Method="spGetProgStaffList">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetProgStaffListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Active1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id2" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CurrentId" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetProgScheduleList" Method="spGetProgScheduleList">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetProgScheduleListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BeginTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Active1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id2" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CurrentId" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Title1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateSchoolProgram" Method="spUpdateSchoolProgram">
+    <Parameter Name="Id" Parameter="id" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Title" Parameter="title" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="Fees" Parameter="fees" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="FeesPeriodId" Parameter="feesPeriodId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Active" Parameter="active" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Comments" Parameter="comments" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="LastModifiedById" Parameter="lastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Result" Parameter="result" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetProgClassCategory" Method="spGetProgClassCategory">
+    <Parameter Name="SchoolID" Parameter="schoolID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetProgClassCategoryResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassCategoryId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsPrimary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id2" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Active1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id3" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comments2" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CurrentId" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById3" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SchoolProgramId1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassCategoryId1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Title1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDateTime4" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById3" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById4" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildIdNotInChildSchoolYear" Method="spGetChildIdNotInChildSchoolYear">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildIdNotInChildSchoolYearResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spAddChildIdChildSchoolYear" Method="spAddChildIdChildSchoolYear">
+    <Parameter Name="ChildDataId" Parameter="childDataId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spGetChildAbsentHistory" Method="spGetChildAbsentHistory">
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildAbsentHistoryResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AbsentReasonId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildName" Type="System.String" DbType="NVarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="AbsentReason" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetSchoolProgramForSchedule" Method="spGetSchoolProgramForSchedule">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetSchoolProgramForScheduleResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsPrimary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildEnrollmentStatus" Method="spGetChildEnrollmentStatus">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildEnrollmentStatusResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EnrollmentStatusId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EnrollmentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetProgScheduleForChildSchedule" Method="spGetProgScheduleForChildSchedule">
+    <Parameter Name="SchoolProgramId" Parameter="schoolProgramId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetProgScheduleForChildScheduleResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BeginTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(101) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCheckDuplicateChildEnrollmentStatus" Method="spCheckDuplicateChildEnrollmentStatus">
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="EnrollmentStatusId" Parameter="enrollmentStatusId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="EnrollmentDate" Parameter="enrollmentDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Id" Parameter="id" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spCheckDuplicateChildEnrollmentStatusResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EnrollmentStatusId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EnrollmentDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spJSONGetClassRoomStaff" Method="spJSONGetClassRoomStaff">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spJSONGetClassRoomStaffResult">
+      <Column Name="ClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="StaffName" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StaffSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetProgClassRoomIdAndClassRoomName" Method="spGetProgClassRoomIdAndClassRoomName">
+    <Parameter Name="SchoolProgramId" Parameter="schoolProgramId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetProgClassRoomIdAndClassRoomNameResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetCheckDuplicateProgClassRoomId" Method="spGetCheckDuplicateProgClassRoomId">
+    <Parameter Name="ClassRoomId" Parameter="classRoomId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="BeginTime" Parameter="beginTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EndTime" Parameter="endTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="DayIndex" Parameter="dayIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id" Parameter="id" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetCheckDuplicateProgClassRoomIdResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BeginTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Active1" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsPrimary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime1" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id2" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId1" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgStaffId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Active2" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime2" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById2" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Id3" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaxSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Active3" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StaffId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime3" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById3" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Program" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetCheckBeginTimeAndEndTimeInHoursOfOpration" Method="spGetCheckBeginTimeAndEndTimeInHoursOfOpration">
+    <Parameter Name="DayIndex" Parameter="dayIndex" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="BeginTime" Parameter="beginTime" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="EndTime" Parameter="endTime" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="spGetCheckBeginTimeAndEndTimeInHoursOfOprationResult">
+      <Column Name="Begintime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Opentime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CloseTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spJSONChildListByClassRoomId" Method="spJSONChildListByClassRoomId">
+    <Parameter Name="ClassRoomId" Parameter="classRoomId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spJSONChildListByClassRoomIdResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassCategoryId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgScheduleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BeginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Program" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ChildPhoto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MsgDisplayed" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MsgStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FamilyMsgLastModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChildModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChildActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildScheduleList" Method="spGetChildScheduleList">
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildScheduleListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgScheduleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BeginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BeginTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SchoolProgram" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoom" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(101) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildScheduleById" Method="spGetChildScheduleById">
+    <Parameter Name="Id" Parameter="id" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildScheduleByIdResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgScheduleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="BeginDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Day" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BeginTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SchoolProgram" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoom" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(101) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildProgEnrollment" Method="spGetChildProgEnrollment">
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolProgramId" Parameter="schoolProgramId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildProgEnrollmentResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DayType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildProgEnrollmentAll" Method="spGetChildProgEnrollmentAll">
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildProgEnrollmentAllResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Program" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Day" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="DayType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spJSONGetListOfActiveChildren" Method="spJSONGetListOfActiveChildren">
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spJSONGetListOfActiveChildrenResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgClassRoomId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DayIndex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DayType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Program" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PassCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ChildPhoto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MsgDisplayed" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MsgStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FamilyMsgLastModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChildModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClassRoomTitle" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetSchoolProgram" Method="spGetSchoolProgram">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetSchoolProgramResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsPrimary" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetSchoolProgramIdAndName" Method="spGetSchoolProgramIdAndName">
+    <ElementType Name="spGetSchoolProgramIdAndNameResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IsPrimary" Type="System.String" DbType="NVarChar(210) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetAllChildDataList" Method="spGetAllChildDataList">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetAllChildDataListResult">
+      <Column Name="ChildDataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFullName" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyFullName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetLedgerDetail" Method="spGetLedgerDetail">
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ChildFamilyId" Parameter="childFamilyId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetLedgerDetailResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PaymentId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="TransactionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Detail" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="ChildDataId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Debit" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="AllowEdit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Comment" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PaymentMethodId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChargeCodeCategoryId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChargeCodeName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildList" Method="spGetChildList">
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFullName" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spChildAttendanceHistoryList" Method="spChildAttendanceHistoryList">
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spChildAttendanceHistoryListResult">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CheckIn" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CheckOut" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spStaffAttendanceHistoryList" Method="spStaffAttendanceHistoryList">
+    <Parameter Name="StaffSchoolYearId" Parameter="staffSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spStaffAttendanceHistoryListResult">
+      <Column Name="id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="schoolyearid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="checkincheckoutdatetime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CheckIn" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="CheckOut" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="StaffSchoolyearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetStaffList" Method="spGetStaffList">
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetStaffListResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StaffSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildFamily" Method="spGetChildFamily">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildFamilyResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="StateId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MsgDisplayed" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MsgStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetSchoolProgramFeesDetail" Method="spGetSchoolProgramFeesDetail">
+    <Parameter Name="SchoolProgramId" Parameter="schoolProgramId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetSchoolProgramFeesDetailResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ProgramTitle" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fees" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="EffectiveYearDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffectiveMonthDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveWeekDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetLateFeeofFamilies" Method="spGetLateFeeofFamilies">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="BalanceAmount" Parameter="balanceAmount" Type="System.Decimal" DbType="Decimal" />
+    <ElementType Name="spGetLateFeeofFamiliesResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChildName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Debit" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetFamilywiseChildName" Method="spGetFamilywiseChildName">
+    <Parameter Name="ChildFamilyId" Parameter="childFamilyId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ShcoolYearId" Parameter="shcoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetFamilywiseChildNameResult">
+      <Column Name="[XML_F52E2B61-18A1-11d1-B105-00805F49916B]" Member="XML_F52E2B61_18A1_11d1_B105_00805F49916B" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetFamiliesWithChild" Method="spGetFamiliesWithChild">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetFamiliesWithChildResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChildName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetLateFeeofFamiliesReport" Method="spGetLateFeeofFamiliesReport">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetLateFeeofFamiliesReportResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ChildName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="LateFee" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TransactionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetLastYearClosingBalance" Method="spGetLastYearClosingBalance">
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="ChildFamilyId" Parameter="childFamilyId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetLastYearClosingBalanceResult">
+      <Column Name="balance" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="year" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetIsPrimarySchoolProgram" Method="spGetIsPrimarySchoolProgram">
+    <Parameter Name="ChildSchoolYearId" Parameter="childSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetIsPrimarySchoolProgramResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SchoolProgramId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FeesPeriodId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Fee" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EffectiveYearDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffectiveMonthDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveWeekDay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreatedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastmodiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LastmodifiedDatetime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnrollmentDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnrollmentStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EnrollmentStatusId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildFamilyById" Method="spGetChildFamilyById">
+    <Parameter Name="Id" Parameter="id" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CurrentSchoolyearId" Parameter="currentSchoolyearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildFamilyByIdResult">
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="StateId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Comments" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MsgDisplayed" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="MsgStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgEndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ChildFamilyCreateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChildFamilyLastModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChildFamilyCreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="ChildFamilyLastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FamilyDataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RelationShipId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationShipName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Guardian" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyPhone1" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyPhone1Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyPhone2" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyPhone2Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyCreateDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FamilyLastModifiedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FamilyCreatedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FamilyLastModifiedById" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetChildFamilyForLEdgerOfFammily" Method="spGetChildFamilyForLEdgerOfFammily">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetChildFamilyForLEdgerOfFammilyResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyTitle" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ChildName" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="HomePhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Debit" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="OpBal" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetAllActiveChildListForImport" Method="spGetAllActiveChildListForImport">
+    <Parameter Name="CurrentSchoolyearId" Parameter="currentSchoolyearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetAllActiveChildListForImportResult">
+      <Column Name="ChildDataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ImportedCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetPreviousYearOfSelectedCurrentYear" Method="spGetPreviousYearOfSelectedCurrentYear">
+    <Parameter Name="SchoolyearId" Parameter="schoolyearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetPreviousYearOfSelectedCurrentYearResult">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SchoolYear" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spGetAllChildListForImport" Method="spGetAllChildListForImport">
+    <Parameter Name="CurrentSchoolyearId" Parameter="currentSchoolyearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="PreSchoolYearId" Parameter="preSchoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spGetAllChildListForImportResult">
+      <Column Name="ChildDataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFamilyId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(102) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ChildLastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FamilyName" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ImportedCount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spUpdateClosingBalance" Method="spUpdateClosingBalance">
+    <Parameter Name="SchoolId" Parameter="schoolId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SchoolYearId" Parameter="schoolYearId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="childfamilyid" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="spUpdateClosingBalanceResult">
+      <Column Name="Column1" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,16 @@
+[4/11/2013 09:58:06 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[4/11/2013 09:58:06 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[4/11/2013 09:59:49 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[4/11/2013 09:59:49 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[4/11/2013 09:59:57 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[4/11/2013 09:59:57 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[4/11/2013 11:52:06 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[4/11/2013 11:52:06 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[4/11/2013 11:52:16 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[4/11/2013 11:52:16 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[4/11/2013 11:52:16 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[4/11/2013 11:52:16 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[4/11/2013 11:52:35 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[4/11/2013 11:52:35 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[4/11/2013 11:52:35 AM][INFO][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadSchoolYear Method
+[4/11/2013 11:52:35 AM][DEBUG][clSchoolYear][LoadSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadSchoolYear Method

@@ -1,0 +1,16 @@
+[03/28/2012 10:02:30 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[03/28/2012 10:02:30 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[03/28/2012 10:02:37 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[03/28/2012 10:02:37 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[03/28/2012 10:22:30 AM][INFO][clClassRoom][LoadClassRoom][00000000-0000-0000-0000-000000000000] Execute LoadClassRoom Method
+[03/28/2012 10:22:30 AM][DEBUG][clClassRoom][LoadClassRoom][00000000-0000-0000-0000-000000000000] Debug LoadClassRoom Method
+[03/28/2012 10:22:30 AM][INFO][clAddEditChild][Save][00000000-0000-0000-0000-000000000000] Execute Save Method
+[03/28/2012 10:22:30 AM][DEBUG][clAddEditChild][LoadChildFamily][00000000-0000-0000-0000-000000000000] Debug LoadChildFamily Method
+[03/28/2012 10:22:30 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[03/28/2012 10:22:30 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[03/28/2012 10:22:35 AM][INFO][clClassRoom][GetClassroomWiseStudentWeeklySchedule][00000000-0000-0000-0000-000000000000] Execute GetClassroomWiseStudentWeeklySchedule Method
+[03/28/2012 10:22:35 AM][DEBUG][clClassRoom][GetClassroomWiseStudentWeeklySchedule][00000000-0000-0000-0000-000000000000] Debug GetClassroomWiseStudentWeeklySchedule Method
+[03/28/2012 10:22:39 AM][INFO][clClassRoom][GetClassroomWiseStudentWeeklySchedule][00000000-0000-0000-0000-000000000000] Execute GetClassroomWiseStudentWeeklySchedule Method
+[03/28/2012 10:22:39 AM][DEBUG][clClassRoom][GetClassroomWiseStudentWeeklySchedule][00000000-0000-0000-0000-000000000000] Debug GetClassroomWiseStudentWeeklySchedule Method
+[03/28/2012 10:22:40 AM][INFO][clClassRoom][GetClassroomWiseStudentWeeklySchedule][00000000-0000-0000-0000-000000000000] Execute GetClassroomWiseStudentWeeklySchedule Method
+[03/28/2012 10:22:40 AM][DEBUG][clClassRoom][GetClassroomWiseStudentWeeklySchedule][00000000-0000-0000-0000-000000000000] Debug GetClassroomWiseStudentWeeklySchedule Method

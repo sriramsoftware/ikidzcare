@@ -1,0 +1,188 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UI/DayCareIndex.Master" AutoEventWireup="true"
+    CodeBehind="ChildProgEnrollment.aspx.cs" Inherits="DayCare.UI.ChildProgEnrollment" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <script language="javascript" type="text/javascript">
+        function ValidationOnformSubmit() {
+            var ErrorMsg = "";
+            if (document.getElementById("<%=ddlProg.ClientID %>").selectedIndex > 0) {
+                
+            }
+            else {
+                ErrorMsg = "Please select program";
+            }
+
+            if (ErrorMsg != "") {
+                alert(ErrorMsg);
+                return false;
+            }
+        }
+    </script>
+
+    <div class="innerMain">
+        <div class="content">
+            <table style="width: 100%;">
+                <tr>
+                    <td>
+                        Program:&nbsp;<asp:DropDownList ID="ddlProg" runat="server" OnSelectedIndexChanged="ddlProg_SelectedIndexChanged"
+                            AutoPostBack="true">
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        Fee:&nbsp;<asp:TextBox ID="txtFee" runat="server" Width="100px" ReadOnly="true"></asp:TextBox>
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:CheckBox ID="ChkAll" runat="server" AutoPostBack="true" OnCheckedChanged="ChkAll_CheckedChanged" />Check
+                        All:
+                    </td>
+                    <td>
+                        Day Type:
+                    </td>
+                    <td>
+                        Class Room:
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:CheckBox ID="ChkMon" runat="server" />Mon
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlDayType1" runat="server">
+                            <asp:ListItem Text="--Select--"></asp:ListItem>
+                            <asp:ListItem Text="FullDay"></asp:ListItem>
+                            <asp:ListItem Text="AM"></asp:ListItem>
+                            <asp:ListItem Text="PM"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlChildProgClassRoom" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:CheckBox ID="ChkTue" runat="server" />Tue
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlDayType2" runat="server">
+                            <asp:ListItem Text="--Select--"></asp:ListItem>
+                            <asp:ListItem Text="FullDay"></asp:ListItem>
+                            <asp:ListItem Text="AM"></asp:ListItem>
+                            <asp:ListItem Text="PM"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlChildProgClassRoom1" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:CheckBox ID="ChkWen" runat="server" />Wen
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlDayType3" runat="server">
+                            <asp:ListItem Text="--Select--"></asp:ListItem>
+                            <asp:ListItem Text="FullDay"></asp:ListItem>
+                            <asp:ListItem Text="AM"></asp:ListItem>
+                            <asp:ListItem Text="PM"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlChildProgClassRoom2" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:CheckBox ID="ChkThus" runat="server" />Thus
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlDayType4" runat="server">
+                            <asp:ListItem Text="--Select--"></asp:ListItem>
+                            <asp:ListItem Text="FullDay"></asp:ListItem>
+                            <asp:ListItem Text="AM"></asp:ListItem>
+                            <asp:ListItem Text="PM"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlChildProgClassRoom3" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:CheckBox ID="ChkFri" runat="server" />Fri
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlDayType5" runat="server">
+                            <asp:ListItem Text="--Select--"></asp:ListItem>
+                            <asp:ListItem Text="FullDay"></asp:ListItem>
+                            <asp:ListItem Text="AM"></asp:ListItem>
+                            <asp:ListItem Text="PM"></asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlChildProgClassRoom4" runat="server">
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+            </table>
+            <asp:Button ID="btnSave" runat="server" Text="Save" Width="70px" OnClick="btnSave_Click" />
+            <asp:Button ID="btnCancel" runat="server" Text="Cancel" Width="70px" OnClick="btnCancel_Click" />
+        </div>
+        <telerik:RadGrid ID="rgProgramEnrollment" runat="server" CssClass="RemoveBorders"
+            Width="100%" PagerStyle-AlwaysVisible="true" PageSize="10" BorderWidth="0" ClientSettings-Scrolling-AllowScroll="true"
+            AllowFilteringByColumn="True" Height="430px" AllowPaging="true" AllowSorting="true"
+            OnNeedDataSource="rgProgramEnrollment_NeedDataSource" OnEditCommand="rgProgramEnrollment_EditCommand"
+            OnItemCommand="rgProgramEnrollment_ItemCommand">
+            <GroupingSettings CaseSensitive="false" />
+            <ItemStyle Wrap="true" />
+            <HeaderContextMenu EnableEmbeddedSkins="true" />
+            <PagerStyle AlwaysVisible="True" ShowPagerText="true" Mode="NextPrevAndNumeric" />
+            <MasterTableView AutoGenerateColumns="false" Width="100%" DataKeyNames="Id">
+                <Columns>
+                    <telerik:GridEditCommandColumn HeaderStyle-Width="5%" HeaderText="Edit" ButtonType="ImageButton"
+                        Reorderable="False" UniqueName="Edit" ItemStyle-BorderStyle="None">
+                        <HeaderStyle Width="5%"></HeaderStyle>
+                    </telerik:GridEditCommandColumn>
+                    <telerik:GridBoundColumn DataField="ProgramTitle" HeaderText="Program" UniqueName="ProgramTitle">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="Day" HeaderText="Day" UniqueName="Day">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="DayType" HeaderText="Time" UniqueName="DayType">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="ClassRoom" HeaderText="Class Room" UniqueName="ClassRoom">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="ChildSchoolYearId" HeaderText="ChildSchoolYearId"
+                        UniqueName="ChildSchoolYearId" Visible="false">
+                    </telerik:GridBoundColumn>
+                    <telerik:GridBoundColumn DataField="SchoolProgramId" HeaderText="SchoolProgramId"
+                        UniqueName="SchoolProgramId" Visible="false">
+                    </telerik:GridBoundColumn>
+                </Columns>
+            </MasterTableView>
+            <ClientSettings AllowColumnsReorder="True" AllowDragToGroup="True" ReorderColumnsOnClient="True">
+                <Selecting AllowRowSelect="True" />
+                <Scrolling AllowScroll="True" UseStaticHeaders="True" />
+            </ClientSettings>
+            <FilterMenu EnableEmbeddedSkins="true" ExpandAnimation-Type="Linear">
+                <ExpandAnimation Type="Linear" />
+            </FilterMenu>
+        </telerik:RadGrid>
+        <telerik:RadAjaxLoadingPanel ID="RAPL1" runat="server">
+        </telerik:RadAjaxLoadingPanel>
+    </div>
+    <asp:HiddenField ID="hdnMon" runat="server" />
+    <asp:HiddenField ID="hdnTue" runat="server" />
+    <asp:HiddenField ID="hdnThus" runat="server" />
+    <asp:HiddenField ID="hdnWen" runat="server" />
+    <asp:HiddenField ID="hdnFri" runat="server" />
+</asp:Content>

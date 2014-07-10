@@ -1,0 +1,10 @@
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\bin\Debug\DayCareJsonService.dll.config
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\bin\Debug\DayCareJsonService.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\bin\Debug\DayCareJsonService.pdb
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\bin\Debug\DayCareDAL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\bin\Debug\DayCarePL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\bin\Debug\DayCareDAL.pdb
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\bin\Debug\DayCarePL.pdb
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\obj\Debug\ResolveAssemblyReference.cache
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\obj\Debug\DayCareJsonService.dll
+C:\Prakash\Project\DayCare\DayCare\DayCareJsonService\obj\Debug\DayCareJsonService.pdb

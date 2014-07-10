@@ -1,0 +1,12 @@
+[10/5/2011 10:33:35 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[10/5/2011 10:33:35 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[10/5/2011 10:33:39 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[10/5/2011 10:33:39 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[10/5/2011 10:35:02 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[10/5/2011 10:35:02 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[10/5/2011 10:35:02 AM][INFO][clChildFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Execute LoadChildFamily Method
+[10/5/2011 10:35:02 AM][DEBUG][clChildFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Debug LoadChildFamily Method
+[10/5/2011 10:36:22 AM][INFO][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Execute GetCurrentSchoolYear Method
+[10/5/2011 10:36:22 AM][DEBUG][clSchoolYear][GetCurrentSchoolYear][00000000-0000-0000-0000-000000000000] Debug GetCurrentSchoolYear Method
+[10/5/2011 10:36:22 AM][INFO][clChildFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Execute LoadChildFamily Method
+[10/5/2011 10:36:22 AM][DEBUG][clChildFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Debug LoadChildFamily Method

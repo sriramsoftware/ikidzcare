@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayCare", "DayCare\DayCare.csproj", "{5F76F553-3EAD-43D7-9C8C-D8D8B00226AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayCarePL", "DayCarePL\DayCarePL.csproj", "{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayCareBAL", "DayCareBAL\DayCareBAL.csproj", "{553CC52A-13AD-4C24-B33B-019365D2090D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayCareJsonService", "DayCareJsonService\DayCareJsonService.csproj", "{B29EF607-042C-4421-B6B2-A1A08EB29B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayCareDAL", "DayCareDAL\DayCareDAL.csproj", "{064FFDFA-447E-4983-9EDC-317C9EB7BC97}"
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DayCare\\DayCare.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = DayCare\\
+		SccProjectUniqueName2 = DayCareBAL\\DayCareBAL.csproj
+		SccLocalPath2 = .
+		SccProjectFilePathRelativizedFromConnection2 = DayCareBAL\\
+		SccProjectUniqueName3 = DayCareJsonService\\DayCareJsonService.csproj
+		SccLocalPath3 = .
+		SccProjectFilePathRelativizedFromConnection3 = DayCareJsonService\\
+		SccProjectUniqueName4 = DayCarePL\\DayCarePL.csproj
+		SccLocalPath4 = .
+		SccProjectFilePathRelativizedFromConnection4 = DayCarePL\\
+		SccProjectUniqueName5 = DayCareDAL\\DayCareDAL.csproj
+		SccLocalPath5 = .
+		SccProjectFilePathRelativizedFromConnection5 = DayCareDAL\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F76F553-3EAD-43D7-9C8C-D8D8B00226AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F76F553-3EAD-43D7-9C8C-D8D8B00226AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F76F553-3EAD-43D7-9C8C-D8D8B00226AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F76F553-3EAD-43D7-9C8C-D8D8B00226AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{553CC52A-13AD-4C24-B33B-019365D2090D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{553CC52A-13AD-4C24-B33B-019365D2090D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{553CC52A-13AD-4C24-B33B-019365D2090D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{553CC52A-13AD-4C24-B33B-019365D2090D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B29EF607-042C-4421-B6B2-A1A08EB29B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29EF607-042C-4421-B6B2-A1A08EB29B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29EF607-042C-4421-B6B2-A1A08EB29B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29EF607-042C-4421-B6B2-A1A08EB29B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064FFDFA-447E-4983-9EDC-317C9EB7BC97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064FFDFA-447E-4983-9EDC-317C9EB7BC97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064FFDFA-447E-4983-9EDC-317C9EB7BC97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064FFDFA-447E-4983-9EDC-317C9EB7BC97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

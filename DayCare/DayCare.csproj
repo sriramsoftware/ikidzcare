@@ -1,0 +1,1062 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5F76F553-3EAD-43D7-9C8C-D8D8B00226AA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DayCare</RootNamespace>
+    <AssemblyName>DayCare</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\windows\assembly\GAC_MSIL\CrystalDecisions.Web\10.5.3700.0__692fbea5521e1304\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="Telerik.Web.UI, Version=2009.3.1208.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Users\vimal\Desktop\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CountryState.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="XML\CountryList.xml" />
+    <Content Include="XML\country_state.xml" />
+    <Content Include="XML\StateList.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="CountryState.aspx.cs">
+      <DependentUpon>CountryState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CountryState.aspx.designer.cs">
+      <DependentUpon>CountryState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FamilyChildListReport.aspx.cs">
+      <DependentUpon>FamilyChildListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\FamilyChildListReport.aspx.designer.cs">
+      <DependentUpon>FamilyChildListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptChildDataListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptChildDataListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RptChildListReport.aspx.cs">
+      <DependentUpon>RptChildListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\RptChildListReport.aspx.designer.cs">
+      <DependentUpon>RptChildListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptClassroomWiseStudentWithFee.cs">
+      <DependentUpon>rptClassroomWiseStudentWithFee.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\rptFamilyChildList1Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFamilyChildList1Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RptFamilyChildListReport.aspx.cs">
+      <DependentUpon>RptFamilyChildListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\RptFamilyChildListReport.aspx.designer.cs">
+      <DependentUpon>RptFamilyChildListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptFamilyChildListReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptFamilyChildListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RptLedgerReport.aspx.cs">
+      <DependentUpon>RptLedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\RptLedgerReport.aspx.designer.cs">
+      <DependentUpon>RptLedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptProgramWiseStudentWeeklyScheduleWithFee.cs">
+      <DependentUpon>rptProgramWiseStudentWeeklyScheduleWithFee.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\rptAccountReceivablesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAccountReceivablesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptAccountReceivableReport.aspx.cs">
+      <DependentUpon>rptAccountReceivableReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rptAccountReceivableReport.aspx.designer.cs">
+      <DependentUpon>rptAccountReceivableReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptCreditReport.aspx.cs">
+      <DependentUpon>rptCreditReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rptCreditReport.aspx.designer.cs">
+      <DependentUpon>rptCreditReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptCreditsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCreditsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptFamilyWiseLateFeesReport.aspx.cs">
+      <DependentUpon>rptFamilyWiseLateFeesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rptFamilyWiseLateFeesReport.aspx.designer.cs">
+      <DependentUpon>rptFamilyWiseLateFeesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptLateFeesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLateFeesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptLedgerOfFamily.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptLedgerOfFamily.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RptLedgerOfFamilyReport.aspx.cs">
+      <DependentUpon>RptLedgerOfFamilyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\RptLedgerOfFamilyReport.aspx.designer.cs">
+      <DependentUpon>RptLedgerOfFamilyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptStaffAttendanceByDate.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStaffAttendanceByDate.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptStudentAttendanceByClassName.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStudentAttendanceByClassName.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptStudentAttendanceByDate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStudentAttendanceByDate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptStudentSchedule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStudentSchedule.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptStudentScheduleReport.aspx.cs">
+      <DependentUpon>rptStudentScheduleReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rptStudentScheduleReport.aspx.designer.cs">
+      <DependentUpon>rptStudentScheduleReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewAccountReceivablesReport.aspx.cs">
+      <DependentUpon>ViewAccountReceivablesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewAccountReceivablesReport.aspx.designer.cs">
+      <DependentUpon>ViewAccountReceivablesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewChildListReport.aspx.cs">
+      <DependentUpon>ViewChildListReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewChildListReport.aspx.designer.cs">
+      <DependentUpon>ViewChildListReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewCreditReport.aspx.cs">
+      <DependentUpon>ViewCreditReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewCreditReport.aspx.designer.cs">
+      <DependentUpon>ViewCreditReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewFamilyWiseLateFeesReport.aspx.cs">
+      <DependentUpon>ViewFamilyWiseLateFeesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewFamilyWiseLateFeesReport.aspx.designer.cs">
+      <DependentUpon>ViewFamilyWiseLateFeesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewLedgerOfFamilyReport.aspx.cs">
+      <DependentUpon>ViewLedgerOfFamilyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewLedgerOfFamilyReport.aspx.designer.cs">
+      <DependentUpon>ViewLedgerOfFamilyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewLedgerReport.aspx.cs">
+      <DependentUpon>ViewLedgerReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewLedgerReport.aspx.designer.cs">
+      <DependentUpon>ViewLedgerReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\viewstudentschedule.aspx.cs">
+      <DependentUpon>viewstudentschedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\viewstudentschedule.aspx.designer.cs">
+      <DependentUpon>viewstudentschedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdditionalNotes.aspx.cs">
+      <DependentUpon>AdditionalNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AdditionalNotes.aspx.designer.cs">
+      <DependentUpon>AdditionalNotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditLedger.aspx.cs">
+      <DependentUpon>EditLedger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EditLedger.aspx.designer.cs">
+      <DependentUpon>EditLedger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FamilyLateFee.aspx.cs">
+      <DependentUpon>FamilyLateFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\FamilyLateFee.aspx.designer.cs">
+      <DependentUpon>FamilyLateFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImportChild.aspx.cs">
+      <DependentUpon>ImportChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ImportChild.aspx.designer.cs">
+      <DependentUpon>ImportChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LateFee.aspx.cs">
+      <DependentUpon>LateFee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LateFee.aspx.designer.cs">
+      <DependentUpon>LateFee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\rptDeposit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDeposit.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptPaymentDepositsReport.aspx.cs">
+      <DependentUpon>rptPaymentDepositsReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rptPaymentDepositsReport.aspx.designer.cs">
+      <DependentUpon>rptPaymentDepositsReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewPaymentDeposits.aspx.cs">
+      <DependentUpon>ViewPaymentDeposits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewPaymentDeposits.aspx.designer.cs">
+      <DependentUpon>ViewPaymentDeposits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AddEditChild.aspx.cs">
+      <DependentUpon>AddEditChild.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AddEditChild.aspx.designer.cs">
+      <DependentUpon>AddEditChild.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildAttendanceHistoryList.aspx.cs">
+      <DependentUpon>ChildAttendanceHistoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildAttendanceHistoryList.aspx.designer.cs">
+      <DependentUpon>ChildAttendanceHistoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildAttendanceList.aspx.cs">
+      <DependentUpon>ChildAttendanceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildAttendanceList.aspx.designer.cs">
+      <DependentUpon>ChildAttendanceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildList.aspx.cs">
+      <DependentUpon>ChildList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildList.aspx.designer.cs">
+      <DependentUpon>ChildList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DashBoard.aspx.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DashBoard.aspx.designer.cs">
+      <DependentUpon>DashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Ledger.aspx.cs">
+      <DependentUpon>Ledger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Ledger.aspx.designer.cs">
+      <DependentUpon>Ledger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptAttendanceReport.aspx.cs">
+      <DependentUpon>rptAttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rptAttendanceReport.aspx.designer.cs">
+      <DependentUpon>rptAttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptClassroomWiseStudent.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptClassroomWiseStudent.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptClassRoomWiseStudentAttendSchool.aspx.cs">
+      <DependentUpon>rptClassRoomWiseStudentAttendSchool.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\rptClassRoomWiseStudentAttendSchool.aspx.designer.cs">
+      <DependentUpon>rptClassRoomWiseStudentAttendSchool.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptProgramWiseStudentWeeklySchedule.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptProgramWiseStudentWeeklySchedule.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptStaffAttendanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStaffAttendanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptStudentAttendanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStudentAttendanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\ViewAttendanceReport.aspx.cs">
+      <DependentUpon>ViewAttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewAttendanceReport.aspx.designer.cs">
+      <DependentUpon>ViewAttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ViewClassWiseStudentAssigned.aspx.cs">
+      <DependentUpon>ViewClassWiseStudentAssigned.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ViewClassWiseStudentAssigned.aspx.designer.cs">
+      <DependentUpon>ViewClassWiseStudentAssigned.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\xmlClassWiseStudentAttendTime.cs">
+      <DependentUpon>xmlClassWiseStudentAttendTime.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\xmlClassWiseStudentAttendTime.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>xmlClassWiseStudentAttendTime.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AttendanceReport.aspx.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AttendanceReport.aspx.designer.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildAbsentHistory.aspx.cs">
+      <DependentUpon>ChildAbsentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildAbsentHistory.aspx.designer.cs">
+      <DependentUpon>ChildAbsentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildData.aspx.cs">
+      <DependentUpon>ChildData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildData.aspx.designer.cs">
+      <DependentUpon>ChildData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildEnrollmentStatus.aspx.cs">
+      <DependentUpon>ChildEnrollmentStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildEnrollmentStatus.aspx.designer.cs">
+      <DependentUpon>ChildEnrollmentStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\childfamily.aspx.cs">
+      <DependentUpon>childfamily.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\childfamily.aspx.designer.cs">
+      <DependentUpon>childfamily.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildProgEnrollment.aspx.cs">
+      <DependentUpon>ChildProgEnrollment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildProgEnrollment.aspx.designer.cs">
+      <DependentUpon>ChildProgEnrollment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChildSchedule.aspx.cs">
+      <DependentUpon>ChildSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChildSchedule.aspx.designer.cs">
+      <DependentUpon>ChildSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EmploymentStatus.aspx.cs">
+      <DependentUpon>EmploymentStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EmploymentStatus.aspx.designer.cs">
+      <DependentUpon>EmploymentStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EnrollmentStatus.aspx.cs">
+      <DependentUpon>EnrollmentStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\EnrollmentStatus.aspx.designer.cs">
+      <DependentUpon>EnrollmentStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\families.aspx.cs">
+      <DependentUpon>families.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\families.aspx.designer.cs">
+      <DependentUpon>families.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FamilyData.aspx.cs">
+      <DependentUpon>FamilyData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\FamilyData.aspx.designer.cs">
+      <DependentUpon>FamilyData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FamilyDataList.aspx.cs">
+      <DependentUpon>FamilyDataList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\FamilyDataList.aspx.designer.cs">
+      <DependentUpon>FamilyDataList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FamilyInfo.aspx.cs">
+      <DependentUpon>FamilyInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\FamilyInfo.aspx.designer.cs">
+      <DependentUpon>FamilyInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FamilyPayment.aspx.cs">
+      <DependentUpon>FamilyPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\FamilyPayment.aspx.designer.cs">
+      <DependentUpon>FamilyPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Font.aspx.cs">
+      <DependentUpon>Font.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Font.aspx.designer.cs">
+      <DependentUpon>Font.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HourOfOperation.aspx.cs">
+      <DependentUpon>HourOfOperation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\HourOfOperation.aspx.designer.cs">
+      <DependentUpon>HourOfOperation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LedgerofFamily.aspx.cs">
+      <DependentUpon>LedgerofFamily.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\LedgerofFamily.aspx.designer.cs">
+      <DependentUpon>LedgerofFamily.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MyAccount.aspx.designer.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProgClassCategory.aspx.cs">
+      <DependentUpon>ProgClassCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ProgClassCategory.aspx.designer.cs">
+      <DependentUpon>ProgClassCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProgramClassRoom.aspx.cs">
+      <DependentUpon>ProgramClassRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ProgramClassRoom.aspx.designer.cs">
+      <DependentUpon>ProgramClassRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProgramStaff.aspx.cs">
+      <DependentUpon>ProgramStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ProgramStaff.aspx.designer.cs">
+      <DependentUpon>ProgramStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProgSchedule.aspx.cs">
+      <DependentUpon>ProgSchedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ProgSchedule.aspx.designer.cs">
+      <DependentUpon>ProgSchedule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Relationship.aspx.cs">
+      <DependentUpon>Relationship.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Relationship.aspx.designer.cs">
+      <DependentUpon>Relationship.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SchoolInfo.aspx.cs">
+      <DependentUpon>SchoolInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SchoolInfo.aspx.designer.cs">
+      <DependentUpon>SchoolInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SchoolProgram.aspx.cs">
+      <DependentUpon>SchoolProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SchoolProgram.aspx.designer.cs">
+      <DependentUpon>SchoolProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SchoolProgramFeesDetail.aspx.cs">
+      <DependentUpon>SchoolProgramFeesDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SchoolProgramFeesDetail.aspx.designer.cs">
+      <DependentUpon>SchoolProgramFeesDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SchoolYearSelection.aspx.cs">
+      <DependentUpon>SchoolYearSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SchoolYearSelection.aspx.designer.cs">
+      <DependentUpon>SchoolYearSelection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AbsentReason.aspx.cs">
+      <DependentUpon>AbsentReason.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\AbsentReason.aspx.designer.cs">
+      <DependentUpon>AbsentReason.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ClassCategory.aspx.cs">
+      <DependentUpon>ClassCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ClassCategory.aspx.designer.cs">
+      <DependentUpon>ClassCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ClassRoom.aspx.cs">
+      <DependentUpon>ClassRoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ClassRoom.aspx.designer.cs">
+      <DependentUpon>ClassRoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SchoolYear.aspx.cs">
+      <DependentUpon>SchoolYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SchoolYear.aspx.designer.cs">
+      <DependentUpon>SchoolYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SecondaryProgram.aspx.cs">
+      <DependentUpon>SecondaryProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SecondaryProgram.aspx.designer.cs">
+      <DependentUpon>SecondaryProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StaffAttendanceHistoryList.aspx.cs">
+      <DependentUpon>StaffAttendanceHistoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\StaffAttendanceHistoryList.aspx.designer.cs">
+      <DependentUpon>StaffAttendanceHistoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StaffAttendanceList.aspx.cs">
+      <DependentUpon>StaffAttendanceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\StaffAttendanceList.aspx.designer.cs">
+      <DependentUpon>StaffAttendanceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StaffList.aspx.cs">
+      <DependentUpon>StaffList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\StaffList.aspx.designer.cs">
+      <DependentUpon>StaffList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ChargeCode.aspx.cs">
+      <DependentUpon>ChargeCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\ChargeCode.aspx.designer.cs">
+      <DependentUpon>ChargeCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Country.aspx.cs">
+      <DependentUpon>Country.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Country.aspx.designer.cs">
+      <DependentUpon>Country.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DayCareIndex.Master.cs">
+      <DependentUpon>DayCareIndex.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DayCareIndex.Master.designer.cs">
+      <DependentUpon>DayCareIndex.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FeesPeriod.aspx.cs">
+      <DependentUpon>FeesPeriod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\FeesPeriod.aspx.designer.cs">
+      <DependentUpon>FeesPeriod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Staff.aspx.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Staff.aspx.designer.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StaffCategory.aspx.cs">
+      <DependentUpon>StaffCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\StaffCategory.aspx.designer.cs">
+      <DependentUpon>StaffCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\State.aspx.cs">
+      <DependentUpon>State.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\State.aspx.designer.cs">
+      <DependentUpon>State.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\addeditchild.ascx.cs">
+      <DependentUpon>addeditchild.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\addeditchild.ascx.designer.cs">
+      <DependentUpon>addeditchild.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserControls\MenuLink.ascx.cs">
+      <DependentUpon>MenuLink.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UserControls\MenuLink.ascx.designer.cs">
+      <DependentUpon>MenuLink.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserGroup.aspx.cs">
+      <DependentUpon>UserGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\UserGroup.aspx.designer.cs">
+      <DependentUpon>UserGroup.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DayCareBAL\DayCareBAL.csproj">
+      <Project>{553CC52A-13AD-4C24-B33B-019365D2090D}</Project>
+      <Name>DayCareBAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DayCareJsonService\DayCareJsonService.csproj">
+      <Project>{B29EF607-042C-4421-B6B2-A1A08EB29B21}</Project>
+      <Name>DayCareJsonService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DayCarePL\DayCarePL.csproj">
+      <Project>{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}</Project>
+      <Name>DayCarePL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChildImages\1b6094ed-b254-424e-85ff-a23a7ce60fbb.jpg" />
+    <Content Include="ChildImages\22fbe1dd-2259-4716-a633-3aa95ad04173.jpg" />
+    <Content Include="ChildImages\boy.png" />
+    <Content Include="ChildImages\c2db28c9-549a-472e-923b-26022686665d.jpg" />
+    <Content Include="ChildImages\ec06683a-54a2-46b4-9f0f-e08785de985d.jpg" />
+    <Content Include="ChildImages\girl.png" />
+    <Content Include="css\DayCare.css" />
+    <Content Include="css\logincss.css" />
+    <Content Include="css\style.css" />
+    <Content Include="FamilyImages\female_photo.png" />
+    <Content Include="FamilyImages\male_photo.png" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\arrowI.png" />
+    <Content Include="images\bgI.png" />
+    <Content Include="images\bodybg.jpg" />
+    <Content Include="images\bodyimg.jpg" />
+    <Content Include="images\bodyimg.png" />
+    <Content Include="images\btn.png" />
+    <Content Include="images\btn1.png" />
+    <Content Include="images\btn1_h.png" />
+    <Content Include="images\btn_bg.png" />
+    <Content Include="images\btn_bgH.png" />
+    <Content Include="images\btn_h.png" />
+    <Content Include="images\cancel.png" />
+    <Content Include="images\close.png" />
+    <Content Include="images\dashImg.jpg" />
+    <Content Include="images\deshImg.png" />
+    <Content Include="images\deshImgold.png" />
+    <Content Include="images\dropdown-list-bg.gif" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\home.png" />
+    <Content Include="images\loginBtn.png" />
+    <Content Include="images\login_box.png" />
+    <Content Include="images\login_btn.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logout.jpg" />
+    <Content Include="images\logout.png" />
+    <Content Include="images\logout1.png" />
+    <Content Include="images\logoutold.png" />
+    <Content Include="images\menubg.jpg" />
+    <Content Include="images\menuDivider.jpg" />
+    <Content Include="images\menuHover.jpg" />
+    <Content Include="images\navigation-arrow.gif" />
+    <Content Include="images\next.png" />
+    <Content Include="images\nextpagebg.png" />
+    <Content Include="images\quation.png" />
+    <Content Include="images\submit.png" />
+    <Content Include="images\table.png" />
+    <Content Include="images\titleBg.jpg" />
+    <Content Include="images\BrowseIcon.gif" />
+    <Content Include="images\viewReport.png" />
+    <Content Include="images\viewReportH.png" />
+    <Content Include="JavaScript\common.js" />
+    <Content Include="JSON\ChildAttendenceHistoryService.svc" />
+    <Content Include="JSON\ChildService.svc" />
+    <Content Include="JSON\LoginService.svc" />
+    <Content Include="JSON\StaffAttendanceHistoryService.svc" />
+    <Content Include="JSON\StaffService.svc" />
+    <Content Include="JSON\SyncLogService.svc" />
+    <Content Include="Report\FamilyChildListReport.aspx" />
+    <Content Include="Report\rptAccountReceivableReport.aspx" />
+    <Content Include="Report\RptChildListReport.aspx" />
+    <Content Include="Report\rptCreditReport.aspx" />
+    <Content Include="Report\RptFamilyChildListReport.aspx" />
+    <Content Include="Report\rptFamilyWiseLateFeesReport.aspx" />
+    <Content Include="Report\RptLedgerOfFamilyReport.aspx" />
+    <Content Include="Report\RptLedgerReport.aspx" />
+    <Content Include="Report\rptStudentScheduleReport.aspx" />
+    <Content Include="Report\ViewAccountReceivablesReport.aspx" />
+    <Content Include="Report\ViewChildListReport.aspx" />
+    <Content Include="Report\ViewCreditReport.aspx" />
+    <Content Include="Report\ViewFamilyWiseLateFeesReport.aspx" />
+    <Content Include="Report\ViewLedgerOfFamilyReport.aspx" />
+    <Content Include="Report\ViewLedgerReport.aspx" />
+    <Content Include="Report\viewstudentschedule.aspx" />
+    <Content Include="UI\AdditionalNotes.aspx" />
+    <Content Include="UI\EditLedger.aspx" />
+    <Content Include="UI\FamilyLateFee.aspx" />
+    <Content Include="UI\ImportChild.aspx" />
+    <Content Include="UI\LateFee.aspx" />
+    <Content Include="Report\rptPaymentDepositsReport.aspx" />
+    <Content Include="Report\ViewPaymentDeposits.aspx" />
+    <Content Include="UI\AddEditChild.aspx" />
+    <Content Include="UI\ChildAttendanceHistoryList.aspx" />
+    <Content Include="UI\ChildAttendanceList.aspx" />
+    <Content Include="UI\ChildList.aspx" />
+    <Content Include="UI\DashBoard.aspx" />
+    <Content Include="UI\Ledger.aspx" />
+    <Content Include="Report\rptAttendanceReport.aspx" />
+    <Content Include="Report\rptClassRoomWiseStudentAttendSchool.aspx" />
+    <Content Include="Report\ViewAttendanceReport.aspx" />
+    <Content Include="Report\ViewClassWiseStudentAssigned.aspx" />
+    <Content Include="StaffImages\female_photo.png" />
+    <Content Include="StaffImages\Filetype-Blank-Alt-icon.png" />
+    <Content Include="StaffImages\male_photo.png" />
+    <Content Include="UI\AttendanceReport.aspx" />
+    <Content Include="UI\ChildAbsentHistory.aspx" />
+    <Content Include="UI\ChildData.aspx" />
+    <Content Include="UI\ChildEnrollmentStatus.aspx" />
+    <Content Include="UI\childfamily.aspx" />
+    <Content Include="UI\ChildProgEnrollment.aspx" />
+    <Content Include="UI\ChildSchedule.aspx" />
+    <Content Include="UI\EmploymentStatus.aspx" />
+    <Content Include="UI\EnrollmentStatus.aspx" />
+    <Content Include="UI\families.aspx" />
+    <Content Include="UI\FamilyData.aspx" />
+    <Content Include="UI\FamilyDataList.aspx" />
+    <Content Include="UI\FamilyInfo.aspx" />
+    <Content Include="UI\FamilyPayment.aspx" />
+    <Content Include="UI\Font.aspx" />
+    <Content Include="UI\HourOfOperation.aspx" />
+    <Content Include="UI\LedgerofFamily.aspx" />
+    <Content Include="UI\MyAccount.aspx" />
+    <Content Include="UI\ProgClassCategory.aspx" />
+    <Content Include="UI\ProgramClassRoom.aspx" />
+    <Content Include="UI\ProgramStaff.aspx" />
+    <Content Include="UI\ProgSchedule.aspx" />
+    <Content Include="UI\Relationship.aspx" />
+    <Content Include="UI\SchoolInfo.aspx" />
+    <Content Include="UI\SchoolProgram.aspx" />
+    <Content Include="UI\SchoolProgramFeesDetail.aspx" />
+    <Content Include="UI\SchoolYearSelection.aspx" />
+    <Content Include="UI\AbsentReason.aspx" />
+    <Content Include="UI\ClassCategory.aspx" />
+    <Content Include="UI\ClassRoom.aspx" />
+    <Content Include="UI\SchoolYear.aspx" />
+    <Content Include="UI\SecondaryProgram.aspx" />
+    <Content Include="UI\StaffAttendanceHistoryList.aspx" />
+    <Content Include="UI\StaffAttendanceList.aspx" />
+    <Content Include="UI\StaffList.aspx" />
+    <Content Include="UI\ChargeCode.aspx" />
+    <Content Include="UI\Country.aspx" />
+    <Content Include="UI\DayCareIndex.Master" />
+    <Content Include="UI\FeesPeriod.aspx" />
+    <Content Include="UI\Role.aspx" />
+    <Content Include="UI\Staff.aspx" />
+    <Content Include="UI\StaffCategory.aspx" />
+    <Content Include="UI\State.aspx" />
+    <Content Include="UI\UserControls\addeditchild.ascx" />
+    <Content Include="UI\UserControls\MenuLink.ascx" />
+    <Content Include="UI\UserGroup.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report\rptChildDataListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptChildDataListReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptClassroomWiseStudentWithFee.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClassroomWiseStudentWithFee.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptFamilyChildList1Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFamilyChildList1Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptFamilyChildListReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptFamilyChildListReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptProgramWiseStudentWeeklyScheduleWithFee.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProgramWiseStudentWeeklyScheduleWithFee.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptAccountReceivablesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAccountReceivablesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptClassroomWiseStudent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptClassroomWiseStudent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptCreditsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCreditsReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptDeposit.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDeposit.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptLateFeesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLateFeesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptLedgerOfFamily.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptLedgerOfFamily.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptProgramWiseStudentWeeklySchedule.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProgramWiseStudentWeeklySchedule.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStaffAttendanceByDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStaffAttendanceByDate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStaffAttendanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStaffAttendanceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStudentAttendanceByClassName.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStudentAttendanceByClassName.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStudentAttendanceByDate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStudentAttendanceByDate.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStudentAttendanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStudentAttendanceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptStudentSchedule.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStudentSchedule.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Report\xmlClassWiseStudentAttendTime.xsc">
+      <DependentUpon>xmlClassWiseStudentAttendTime.xsd</DependentUpon>
+    </None>
+    <None Include="Report\xmlClassWiseStudentAttendTime.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>xmlClassWiseStudentAttendTime.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\xmlClassWiseStudentAttendTime.xss">
+      <DependentUpon>xmlClassWiseStudentAttendTime.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Logs\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4079</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5B43D4D9-5556-4CD9-AFA2-3399324E9AFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DayCarePL</RootNamespace>
+    <AssemblyName>DayCarePL</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbsentResonProperties.cs" />
+    <Compile Include="AddEdditChildProperties.cs" />
+    <Compile Include="AdditionalNotesProperties.cs" />
+    <Compile Include="AttendanceHistoryProperties.cs" />
+    <Compile Include="ChargeCodeProperties.cs" />
+    <Compile Include="ChildAbsentHistoryProperties.cs" />
+    <Compile Include="ChildAttendenceHistoryProperties.cs" />
+    <Compile Include="ChildDataProperties.cs" />
+    <Compile Include="ChildEnrollmentStatusProperties.cs" />
+    <Compile Include="ChildFamilyProperties.cs" />
+    <Compile Include="ChildProgEnrollmentProperties.cs" />
+    <Compile Include="ChildScheduleProperties.cs" />
+    <Compile Include="ChildSchoolYearProperties.cs" />
+    <Compile Include="ClassCategoryProperties.cs" />
+    <Compile Include="ClassRoomProperties.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="CommonProperties.cs" />
+    <Compile Include="CountryProperties.cs" />
+    <Compile Include="EmploymentStatusProperties.cs" />
+    <Compile Include="EnrollmentStatusProperties.cs" />
+    <Compile Include="FamilyDataProperties.cs" />
+    <Compile Include="FamilyPaymentProperties.cs" />
+    <Compile Include="FeesPeriodProperties.cs" />
+    <Compile Include="FontProperties.cs" />
+    <Compile Include="HoursOfOperationProperties.cs" />
+    <Compile Include="iChildDataProperties.cs" />
+    <Compile Include="iClassRoomWithStaffProperties.cs" />
+    <Compile Include="iLoginStaffProperties.cs" />
+    <Compile Include="iStaffDetailProperties.cs" />
+    <Compile Include="LedgerProperties.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LoggingConstants.cs" />
+    <Compile Include="ProgClassCategoryProperties.cs" />
+    <Compile Include="ProgClassRoomProperties.cs" />
+    <Compile Include="ProgScheduleProperties.cs" />
+    <Compile Include="ProgStaffProperties.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationshipProperties.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="ResultStatus.cs" />
+    <Compile Include="RoleProperties.cs" />
+    <Compile Include="SchoolListProperties.cs" />
+    <Compile Include="SchoolProgramFeesDetailProperties.cs" />
+    <Compile Include="SchoolProgramProperties.cs" />
+    <Compile Include="SchoolProperties.cs" />
+    <Compile Include="SchoolYearProperties.cs" />
+    <Compile Include="StaffAttendenceHistoryProperties.cs" />
+    <Compile Include="StaffCategoryProperties.cs" />
+    <Compile Include="StaffProperties.cs" />
+    <Compile Include="StaffSchoolYearProperties.cs" />
+    <Compile Include="StateProperties.cs" />
+    <Compile Include="SyncLogProperties.cs" />
+    <Compile Include="TimeZoneProperties.cs" />
+    <Compile Include="UserGroupProperties.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

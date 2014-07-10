@@ -1,0 +1,16 @@
+[03/17/2012 12:22:07 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[03/17/2012 12:22:07 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[03/17/2012 12:22:18 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[03/17/2012 12:22:18 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[03/17/2012 12:22:24 PM][INFO][clChildList][LoadChildAttendanceHistoryList][00000000-0000-0000-0000-000000000000] LoadChildAttendanceHistoryList method called
+[03/17/2012 12:22:24 PM][DEBUG][clFamilyPayment][LoadChildAttendanceHistoryList][00000000-0000-0000-0000-000000000000] Debug LoadChildAttendanceHistoryList called
+[03/17/2012 12:22:25 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[03/17/2012 12:22:25 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[03/17/2012 12:23:27 PM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[03/17/2012 12:23:27 PM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[03/17/2012 12:23:32 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[03/17/2012 12:23:32 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[03/17/2012 12:23:38 PM][INFO][clChildList][LoadChildAttendanceHistoryList][00000000-0000-0000-0000-000000000000] LoadChildAttendanceHistoryList method called
+[03/17/2012 12:23:38 PM][DEBUG][clFamilyPayment][LoadChildAttendanceHistoryList][00000000-0000-0000-0000-000000000000] Debug LoadChildAttendanceHistoryList called
+[03/17/2012 12:23:38 PM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[03/17/2012 12:23:38 PM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method

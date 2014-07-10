@@ -1,0 +1,16 @@
+[11/21/2013 09:31:27 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[11/21/2013 09:31:27 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[11/21/2013 09:32:47 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[11/21/2013 09:32:47 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[11/21/2013 09:32:52 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[11/21/2013 09:32:52 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[11/21/2013 09:32:59 AM][INFO][clLedgerOfFamily][LoadChildFamilyWiseTranDateAmount][00000000-0000-0000-0000-000000000000] Execute LoadChildFamilyWiseTranDateAmount Method
+[11/21/2013 09:32:59 AM][DEBUG][clLedgerOfFamily][LoadChildFamilyWiseTranDateAmount][00000000-0000-0000-0000-000000000000] Debug LoadChildFamilyWiseTranDateAmount Method
+[11/21/2013 09:32:59 AM][INFO][clLedgerOfFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Execute LoadChildFamily Method
+[11/21/2013 09:32:59 AM][DEBUG][clLedgerOfFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Debug LoadChildFamily Method
+[11/21/2013 09:33:00 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[11/21/2013 09:33:00 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[11/21/2013 09:33:39 AM][INFO][clLedgerOfFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Execute LoadChildFamily Method
+[11/21/2013 09:33:39 AM][DEBUG][clLedgerOfFamily][LoadChildFamily][00000000-0000-0000-0000-000000000000] Debug LoadChildFamily Method
+[11/21/2013 09:33:39 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[11/21/2013 09:33:39 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method

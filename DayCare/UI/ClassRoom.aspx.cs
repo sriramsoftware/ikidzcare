@@ -1,0 +1,373 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using Telerik.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace DayCare.UI
+{
+    public partial class ClassRoom : System.Web.UI.Page
+    {
+        RadAjaxManager MasterAjaxManager;
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["SchoolId"] == null || Session["CurrentSchoolYearId"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+               
+            }
+        }
+
+        protected void rgClassRoom_NeedDataSource(object source, Telerik.Web.UI.GridNeedDataSourceEventArgs e)
+        {
+            try
+            {
+                DayCareBAL.ClassRoomService proxyLoad = new DayCareBAL.ClassRoomService();
+                Guid SchoolId = new Guid();
+                if (Session["SchoolId"] != null)
+                {
+                    SchoolId = new Guid(Session["SchoolId"].ToString());
+                }
+                rgClassRoom.DataSource = proxyLoad.LoadClassRoom(SchoolId, new Guid(Session["CurrentSchoolYearId"].ToString()));
+            }
+            catch (Exception ex)
+            {
+                DayCarePL.Logger.Write(DayCarePL.LogType.EXCEPTION, DayCarePL.ModuleToLog.ClassRoom, "rgClassRoom_NeedDataSource", ex.Message.ToString(), DayCarePL.Common.GUID_DEFAULT);
+            }
+        }
+
+        protected void rgClassRoom_EditCommand(object source, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            GridDataItem item = (GridDataItem)e.Item;
+            hdnName.Value = item["Name"].Text;
+        }
+
+        protected void rgClassRoom_InsertCommand(object source, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            bool isValid = SubmitRecord(source, e);
+            {
+                if (isValid == false)
+                {
+                    e.Canceled = true;
+                }
+            }
+            rgClassRoom.MasterTableView.CurrentPageIndex = 0;
+        }
+
+        protected void rgClassRoom_ItemCreated(object sender, Telerik.Web.UI.GridItemEventArgs e)
+        {
+            if (e.Item.ItemType == GridItemType.FilteringItem)
+            {
+                GridFilteringItem fileterItem = (GridFilteringItem)e.Item;
+                for (int i = 0; i < fileterItem.Cells.Count; i++)
+                {
+                    fileterItem.Cells[i].Style.Add("text-align", "left");
+                }
+            }
+            try
+            {
+                if (e.Item is GridEditableItem && e.Item.IsInEditMode)
+                {
+                    GridEditableItem item = e.Item as GridEditableItem;
+                    RequiredFieldValidator validator;
+                    RegularExpressionValidator regvalidator;
+                    TableCell cell;
+                    if (item != null)
+                    {
+                        ValidationSummary validationsum = new ValidationSummary();
+                        validationsum.ID = "validationsum1";
+                        validationsum.ShowMessageBox = true;
+                        validationsum.ShowSummary = false;
+                        validationsum.DisplayMode = ValidationSummaryDisplayMode.SingleParagraph;
+                        GridTextBoxColumnEditor editor = (GridTextBoxColumnEditor)item.EditManager.GetColumnEditor("Name");
+                        ImageButton cmdEdit = (ImageButton)item["Edit"].Controls[0];
+                        if (editor != null)
+                        {
+                            cell = (TableCell)editor.TextBoxControl.Parent;
+                            validator = new RequiredFieldValidator();
+
+                            if (cell != null)
+                            {
+                                editor.TextBoxControl.ID = "Name";
+                                validator.ControlToValidate = editor.TextBoxControl.ID;
+                                validator.ErrorMessage = "Please Enter ClassRoom\n";
+                                validator.SetFocusOnError = true;
+                                validator.Display = ValidatorDisplay.None;
+                                cell.Controls.Add(validator);
+                                cell.Controls.Add(validationsum);
+                            }
+                        }
+                        TextBox txtMaxSize = item["MaxSize"].FindControl("txtMaxSize") as TextBox;
+                        if (txtMaxSize != null)
+                        {
+                            cell = (TableCell)txtMaxSize.Parent;
+                            regvalidator = new RegularExpressionValidator();
+                            if (cell != null)
+                            {
+                                txtMaxSize.ID = "txtMaxSize";
+                                regvalidator.ControlToValidate = txtMaxSize.ID;
+                                regvalidator.ValidationExpression = "[0-9]*";
+                                regvalidator.ErrorMessage = "Max size require numeric. \n";
+                                regvalidator.SetFocusOnError = true;
+                                regvalidator.Display = ValidatorDisplay.None;
+                                cell.Controls.Add(regvalidator);
+                                cell.Controls.Add(validationsum);
+                            }
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                DayCarePL.Logger.Write(DayCarePL.LogType.EXCEPTION, DayCarePL.ModuleToLog.ClassRoom, "rgClassRoom_ItemCreated", ex.Message.ToString(), DayCarePL.Common.GUID_DEFAULT);
+            }
+        }
+
+        protected void rgClassRoom_ItemDataBound(object sender, Telerik.Web.UI.GridItemEventArgs e)
+        {
+            if (e.Item.ItemType == GridItemType.EditItem)
+            {
+                DayCarePL.ClassRoomProperties objClassRoom = e.Item.DataItem as DayCarePL.ClassRoomProperties;
+                DropDownList ddlStaff = e.Item.FindControl("ddlStaff") as DropDownList;
+                Guid SchoolId = new Guid();
+                if (Session["SchoolId"] != null)
+                {
+                    SchoolId = new Guid(Session["SchoolId"].ToString());
+                }
+                Guid CurrentSchoolYearId = new Guid();
+                if (Session["CurrentSchoolYearId"] != null)
+                {
+                    CurrentSchoolYearId = new Guid(Session["CurrentSchoolYearId"].ToString());
+                }
+                if (ddlStaff != null)
+                {
+                    Common.BindStaff(ddlStaff, SchoolId, CurrentSchoolYearId);
+                }
+                if (objClassRoom != null)
+                {
+                    if (ddlStaff != null && ddlStaff.Items.Count > 0)
+                    {
+                        ddlStaff.SelectedValue = Convert.ToString(objClassRoom.StaffId);
+                    }
+                }
+
+                if (e.Item.ItemIndex != -1)
+                {
+                    GridEditableItem itm = e.Item as GridEditableItem;
+                    CheckBox chkActive = itm["Active"].Controls[0] as CheckBox;
+                    DayCareBAL.ClassRoomService proxyClassRoom = new DayCareBAL.ClassRoomService();
+                    if (proxyClassRoom.CheckClassRoomAssignedSchoolProgramm(new Guid(e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Id"].ToString())))
+                    {
+                        chkActive.Enabled = false;
+                        chkActive.ToolTip = "Class is already assigned to program";
+                    }
+                }
+
+            }
+            if (e.Item.ItemIndex == -1)
+            {
+                if (e.Item.Edit == true)
+                {
+                    GridEditableItem dataItem = e.Item as Telerik.Web.UI.GridEditableItem;
+                    CheckBox chkActive = dataItem["Active"].Controls[0] as CheckBox;
+                    chkActive.Checked = true;
+                }
+            }
+        }
+
+        protected void rgClassRoom_UpdateCommand(object source, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            bool isValid = SubmitRecord(source, e);
+            {
+                if (isValid == false)
+                {
+                    e.Canceled = true;
+                }
+            }
+            e.Item.Expanded = false;
+            rgClassRoom.MasterTableView.Rebind();
+            rgClassRoom.MasterTableView.CurrentPageIndex = 0;
+        }
+
+        protected void rgClassRoom_DeleteCommand(object source, GridCommandEventArgs e)
+        {
+            DayCareBAL.ClassRoomService proxyCheckAssignedClassRoom = new DayCareBAL.ClassRoomService();
+            Guid Id = new Guid(e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Id"].ToString());
+            bool Check = proxyCheckAssignedClassRoom.CheckClassRoomAssignedSchoolProgramm(Id);
+            if (!Check)
+            {
+                if (proxyCheckAssignedClassRoom.Delete(Id, new Guid(Session["CurrentSchoolYearId"].ToString())))
+                {
+                    rgClassRoom.MasterTableView.Rebind();
+                    MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                    MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Delete Successfully", "false"));
+                    return;
+                }
+                else
+                {
+                    MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                    MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "This Class Room cannot be deleted until all kids and school programs have been reassigned to another class room.", "false"));
+                    return;
+                }
+            }
+            else
+            {
+                MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "This Class Room cannot be deleted until all kids and school programs have been reassigned to another class room.", "false"));
+                return;
+            }
+        }
+
+
+        public bool SubmitRecord(object source, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            DayCarePL.Logger.Write(DayCarePL.LogType.INFO, DayCarePL.ModuleToLog.ClassRoom, "SubmitRecord", "Submit record method called", DayCarePL.Common.GUID_DEFAULT);
+            bool result = false;
+            try
+            {
+                DayCarePL.Logger.Write(DayCarePL.LogType.DEBUG, DayCarePL.ModuleToLog.ClassRoom, "SubmitRecord", " Debug Submit record method called of ClassRoom", DayCarePL.Common.GUID_DEFAULT);
+
+                DayCareBAL.ClassRoomService proxySave = new DayCareBAL.ClassRoomService();
+                DayCarePL.ClassRoomProperties objClassRoom = new DayCarePL.ClassRoomProperties();
+
+                Telerik.Web.UI.GridDataItem item = (Telerik.Web.UI.GridDataItem)e.Item;
+                var InsertItem = e.Item as Telerik.Web.UI.GridEditableItem;
+                Telerik.Web.UI.GridEditManager editMan = InsertItem.EditManager;
+
+                if (InsertItem != null)
+                {
+                    foreach (GridColumn column in e.Item.OwnerTableView.RenderColumns)
+                    {
+                        if (column is IGridEditableColumn)
+                        {
+                            IGridEditableColumn editableCol = (column as IGridEditableColumn);
+                            if (editableCol.IsEditable)
+                            {
+                                IGridColumnEditor editor = editMan.GetColumnEditor(editableCol);
+                                switch (column.UniqueName)
+                                {
+                                    case "Name":
+                                        {
+                                            objClassRoom.Name = (editor as GridTextBoxColumnEditor).Text.Trim().ToString();
+                                            ViewState["Name"] = objClassRoom.Name;
+                                            break;
+                                        }
+                                    case "MaxSize":
+                                        {
+                                            if (!string.IsNullOrEmpty((e.Item.FindControl("txtMaxSize") as TextBox).Text))
+                                            {
+                                                objClassRoom.MaxSize = Convert.ToInt32((e.Item.FindControl("txtMaxSize") as TextBox).Text);
+                                                ViewState["MaxSize"] = objClassRoom.MaxSize;
+                                            }
+                                            else
+                                            {
+                                                objClassRoom.MaxSize = 0;
+                                            }
+                                            break;
+                                        }
+                                    case "Active":
+                                        {
+                                            objClassRoom.Active = (editor as GridCheckBoxColumnEditor).Value;
+                                            break;
+                                        }
+                                    case "FullName":
+                                        {
+                                            objClassRoom.StaffId = new Guid((e.Item.FindControl("ddlStaff") as DropDownList).SelectedValue);
+                                            break;
+                                        }
+                                }
+                            }
+                        }
+                    }
+                    if (Session["SchoolId"] != null)
+                    {
+                        objClassRoom.SchoolId = new Guid(Session["SchoolId"].ToString());
+                    }
+                    if (e.CommandName != "PerformInsert")
+                    {
+                        if (Session["StaffId"] != null)
+                        {
+                            objClassRoom.LastModifiedById = new Guid(Session["StaffId"].ToString());
+                        }
+                        objClassRoom.Id = new Guid(e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["Id"].ToString());
+                        // objClassRoom.StaffId = new Guid(e.Item.OwnerTableView.DataKeyValues[e.Item.ItemIndex]["FullName"].ToString());
+                        if (!objClassRoom.Id.ToString().Equals(hdnName.Value.Trim()))
+                        {
+                            //  bool ans = Common.CheckDuplicate("ClassRoom", "Name", objClassRoom.Name, "update", objClassRoom.Id.ToString());
+                            bool ans = proxySave.CheckDuplicateClassRoomName(objClassRoom.Name, objClassRoom.Id, objClassRoom.SchoolId, objClassRoom.StaffId.Value, new Guid(Session["CurrentSchoolYearId"].ToString()));
+
+                            if (ans)
+                            {
+                                MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                                MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Already Exist", "false"));
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+
+                        // bool ans = Common.CheckDuplicate("ClassRoom", "Name", objClassRoom.Name, "insert", objClassRoom.Id.ToString());
+                        bool ans = proxySave.CheckDuplicateClassRoomName(objClassRoom.Name, objClassRoom.Id, objClassRoom.SchoolId, objClassRoom.StaffId.Value, new Guid(Session["CurrentSchoolYearId"].ToString()));
+                        if (ans)
+                        {
+                            MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                            MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Already Exist", "false"));
+                            return false;
+                        }
+                    }
+                    hdnName.Value = "";
+                    //result = proxySave.Save(objClassRoom);
+                    if (Session["StaffId"] == null)
+                        Response.Redirect("~/Login.aspx");
+                    else
+                        objClassRoom.LastModifiedById = new Guid(Session["StaffId"].ToString());
+
+                    result = proxySave.SaveClassRoomYearWise(objClassRoom, new Guid(Session["CurrentSchoolYearId"].ToString()));
+
+                    if (result == true)
+                    {
+                        MasterAjaxManager = this.Page.Master.FindControl("RadAjaxManager1") as Telerik.Web.UI.RadAjaxManager;
+                        MasterAjaxManager.ResponseScripts.Add(string.Format("ShowMessage('{0}','{1}')", "Saved Successfully", "false"));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DayCarePL.Logger.Write(DayCarePL.LogType.EXCEPTION, DayCarePL.ModuleToLog.ClassRoom, "SubmitRecord", ex.Message.ToString(), DayCarePL.Common.GUID_DEFAULT);
+                result = false;
+            }
+            return result;
+        }
+
+        protected void rgClassRoom_ItemCommand(object source, Telerik.Web.UI.GridCommandEventArgs e)
+        {
+            Guid SchoolId = new Guid();
+            Guid CurrentSchoolYearId = new Guid();
+            if (Session["SchoolId"] != null)
+            {
+                SchoolId = new Guid(Session["SchoolId"].ToString());
+            }
+
+            if (Session["CurrentSchoolYearId"] != null)
+            {
+                CurrentSchoolYearId = new Guid(Session["CurrentSchoolYearId"].ToString());
+            }
+
+            if (!Common.IsCurrentYear(CurrentSchoolYearId, SchoolId))
+            {
+                if (e.CommandName == "Delete")
+                {
+                    e.Canceled = true;
+                }
+                //else if (e.CommandName == "Edit")
+                //{
+                //    e.Canceled = true;
+                //}
+            }
+        }
+    }
+}

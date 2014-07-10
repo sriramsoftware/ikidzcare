@@ -1,0 +1,5 @@
+C:\Prakash\Project\DayCare\DayCare\DayCarePL\bin\Debug\DayCarePL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCarePL\bin\Debug\DayCarePL.pdb
+C:\Prakash\Project\DayCare\DayCare\DayCarePL\obj\Debug\ResolveAssemblyReference.cache
+C:\Prakash\Project\DayCare\DayCare\DayCarePL\obj\Debug\DayCarePL.dll
+C:\Prakash\Project\DayCare\DayCare\DayCarePL\obj\Debug\DayCarePL.pdb

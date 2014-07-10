@@ -1,0 +1,47 @@
+﻿/* remove border from gridview */
+div.RemoveBorders .rgHeader, div.RemoveBorders th.rgResizeCol, div.RemoveBorders .rgFilterRow td
+{
+    border-width: 0 0 1px 0; /*top right bottom left*/
+}
+div.RemoveBorders .rgAltRow td, div.RemoveBorders .rgFooter td, div.RemoveBorders .RadComboBox
+{
+    border-width: 0; /*padding-left: 7px; needed for row hovering and selection*/
+    background-color: rgb(242, 242, 242);
+}
+div.RemoveBorders .rgRow td
+{
+    border-width: 0; /*padding-left: 7px;*/
+}
+div.RemoveBorders .rgSelectedRow
+{
+    background-color: rgb(242, 242, 242);
+}
+div.windowZIndex
+{
+    z-index: 7010 !important;
+    position: static;
+    display: inline; /* ie fix*/
+}
+
+.nextbtn
+{
+    background: url(../images/next.png) no-repeat top left;
+    color: #4b4b4b;
+    border: none;
+    width: 69px;
+    height: 38px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+.nextBg
+{
+    background: url(../images/nextpagebg.png) no-repeat top center;
+    width: 378px;
+    height: 133px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333;
+    margin: 0 auto;
+    padding: 48px 0 0 0;
+}

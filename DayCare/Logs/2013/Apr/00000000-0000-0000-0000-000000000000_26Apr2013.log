@@ -1,0 +1,15 @@
+[4/26/2013 11:26:54 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[4/26/2013 11:26:55 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[4/26/2013 11:27:42 AM][EXCEPTION][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+[4/26/2013 11:30:37 AM][INFO][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] LoadAllSchool method called
+[4/26/2013 11:30:37 AM][DEBUG][clSchool][LoadAllSchool][00000000-0000-0000-0000-000000000000] Debug LoadAllSchool called
+[4/26/2013 11:30:46 AM][INFO][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Execute LoadStaffDetailsByUserNameAndPassword Method
+[4/26/2013 11:30:46 AM][DEBUG][clStaff][LoadStaffDetailsByUserNameAndPassword][00000000-0000-0000-0000-000000000000] Debug LoadStaffDetailsByUserNameAndPassword Method
+[4/26/2013 11:30:50 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[4/26/2013 11:30:50 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
+[4/26/2013 11:31:01 AM][INFO][clClassRoom][LoadClassRoom][00000000-0000-0000-0000-000000000000] Execute LoadClassRoom Method
+[4/26/2013 11:31:01 AM][DEBUG][clClassRoom][LoadClassRoom][00000000-0000-0000-0000-000000000000] Debug LoadClassRoom Method
+[4/26/2013 11:31:01 AM][INFO][clAddEditChild][Save][00000000-0000-0000-0000-000000000000] Execute Save Method
+[4/26/2013 11:31:01 AM][DEBUG][clAddEditChild][LoadChildFamily][00000000-0000-0000-0000-000000000000] Debug LoadChildFamily Method
+[4/26/2013 11:31:01 AM][INFO][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Execute LoadAllSchoolYear Method
+[4/26/2013 11:31:01 AM][DEBUG][clSchoolYear][LoadAllSchoolYear][00000000-0000-0000-0000-000000000000] Debug LoadAllSchoolYear Method
